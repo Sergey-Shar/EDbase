@@ -4,9 +4,8 @@
 	"description": "",
 	"private": true,
 	"scripts": {
-		"start": "npx webpack serve --config webpack.config.dev.js",
-		"build": "npx webpack --config webpack.config.prod.js",
-		"build:dev": "npx webpack --config webpack.config.dev.js"
+		"start": "npx webpack serve --mode development",
+		"build": "npx webpack --mode production"
 	},
 	"keywords": [],
 	"author": "Sharuha Sergei <sergeihar82@gmail.com>",
@@ -18,6 +17,7 @@
 		"copy-webpack-plugin": "^11.0.0",
 		"css-loader": "^6.7.3",
 		"css-minimizer-webpack-plugin": "^4.2.2",
+		"html-loader": "^4.2.0",
 		"html-webpack-plugin": "^5.5.0",
 		"image-minimizer-webpack-plugin": "^3.8.2",
 		"imagemin": "^8.0.1",
