@@ -56,7 +56,7 @@ module.exports = {
 				test: /\.(jpe?g|png|webp|gif|svg)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'static/assets/image/[name][ext]'
+					filename: 'assets/image/[name][ext]'
 				}
 			},
 			{
@@ -94,8 +94,6 @@ module.exports = {
 				minimizer: {
 					implementation: ImageMinimizerPlugin.imageminMinify,
 					options: {
-						// Lossless optimization with custom option
-						// Feel free to experiment with options for better result for you
 						plugins: [
 							['gifsicle', { interlaced: true }],
 							['jpegtran', { progressive: true }],
