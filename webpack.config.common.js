@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -22,6 +23,10 @@ module.exports = {
 				{
 					from: path.resolve(__dirname, 'public/favicon.ico'),
 					to: path.resolve(__dirname, 'build')
+				},
+				{
+					from: path.resolve(__dirname, 'public/assets'),
+					to: path.resolve(__dirname, 'build/static/assets')
 				}
 			]
 		})
@@ -47,20 +52,13 @@ module.exports = {
 					filename: 'static/fonts/[name][ext]'
 				}
 			},
-			{
-				test: /\.(jpe?g|png|webp|gif)$/i,
-				type: 'asset/resource',
-				generator: {
-					filename: 'static/assets/image/[name][ext]'
-				}
-			},
-			{
-				test: /\.svg$/i,
-				type: 'asset/resource',
-				generator: {
-					filename: 'static/assets/icons/[name][ext]'
-				}
-			},
+			// {
+			// 	test: /\.(jpe?g|png|webp|gif|svg)$/i,
+			// 	type: 'asset/resource',
+			// 	generator: {
+			// 		filename: 'static/assets/image/[name][ext]'
+			// 	}
+			// },
 			{
 				test: /\.s[ac]ss$/i,
 				use: [
@@ -88,5 +86,45 @@ module.exports = {
 				}
 			}
 		]
-	}
+	},
+	// optimization: {
+	// 	minimizer: [
+	// 		'...',
+	// 		new ImageMinimizerPlugin({
+	// 			minimizer: {
+	// 				implementation: ImageMinimizerPlugin.imageminMinify,
+	// 				options: {
+	// 					// Lossless optimization with custom option
+	// 					// Feel free to experiment with options for better result for you
+	// 					plugins: [
+	// 						['gifsicle', { interlaced: true }],
+	// 						['jpegtran', { progressive: true }],
+	// 						['optipng', { optimizationLevel: 5 }],
+	// 						// Svgo configuration here https://github.com/svg/svgo#configuration
+	// 						[
+	// 							'svgo',
+	// 							{
+	// 								plugins: [
+	// 									{
+	// 										name: 'preset-default',
+	// 										params: {
+	// 											overrides: {
+	// 												removeViewBox: false,
+	// 												addAttributesToSVGElement: {
+	// 													params: {
+	// 														attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }]
+	// 													}
+	// 												}
+	// 											}
+	// 										}
+	// 									}
+	// 								]
+	// 							}
+	// 						]
+	// 					]
+	// 				}
+	// 			}
+	// 		})
+	// 	]
+	// }
 }

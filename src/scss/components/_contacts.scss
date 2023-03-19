@@ -1,0 +1,35 @@
+.contacts {
+   background:$main-bg-color;
+   color: $main-text-color;
+			padding-bottom: 3rem;
+		&__content {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__list {
+   margin-top: 1rem;
+
+		}
+
+		&__item {
+   padding: 0.7rem 0;
+   
+		}
+
+		&__email--icon {
+   height: 20px;
+   margin-right: 10px;
+		}
+
+		&__email {
+		}
+
+		&__qr-code {
+   height: 200px;
+		}
+		&__about{
+			height: 400px;
+		}
+}
+
