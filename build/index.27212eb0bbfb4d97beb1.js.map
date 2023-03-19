@@ -1,1 +1,0 @@
-{"version":3,"file":"index.27212eb0bbfb4d97beb1.js","mappings":"mBAGAA,QAAQC,IAAI,Q","sources":["webpack://edual/./src/scripts/index.js"],"sourcesContent":["import '../scss/main.scss'\nimport '../scss/main.scss'\n\nconsole.log('hello')"],"names":["console","log"],"sourceRoot":""}
