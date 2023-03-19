@@ -23,11 +23,11 @@ module.exports = {
 				{
 					from: path.resolve(__dirname, 'public/favicon.ico'),
 					to: path.resolve(__dirname, 'build')
-				},
-				{
-					from: path.resolve(__dirname, 'public/assets'),
-					to: path.resolve(__dirname, 'build/static/assets')
 				}
+				// {
+				// 	from: path.resolve(__dirname, 'public/assets'),
+				// 	to: path.resolve(__dirname, 'build/static/assets')
+				// }
 			]
 		})
 	],
@@ -53,11 +53,8 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.(jpe?g|png|webp|gif|svg)$/i,
-				type: 'asset/resource',
-				generator: {
-					filename: 'assets/image/[name][ext]'
-				}
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource'
 			},
 			{
 				test: /\.s[ac]ss$/i,
@@ -85,44 +82,6 @@ module.exports = {
 					}
 				}
 			}
-		]
-	},
-	optimization: {
-		minimizer: [
-			'...',
-			new ImageMinimizerPlugin({
-				minimizer: {
-					implementation: ImageMinimizerPlugin.imageminMinify,
-					options: {
-						plugins: [
-							['gifsicle', { interlaced: true }],
-							['jpegtran', { progressive: true }],
-							['optipng', { optimizationLevel: 5 }],
-							// Svgo configuration here https://github.com/svg/svgo#configuration
-							[
-								'svgo',
-								{
-									plugins: [
-										{
-											name: 'preset-default',
-											params: {
-												overrides: {
-													removeViewBox: false,
-													addAttributesToSVGElement: {
-														params: {
-															attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }]
-														}
-													}
-												}
-											}
-										}
-									]
-								}
-							]
-						]
-					}
-				}
-			})
 		]
 	}
 }
