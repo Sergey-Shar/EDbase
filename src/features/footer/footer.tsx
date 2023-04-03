@@ -53,14 +53,16 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 						<img src={viteLogo} className="logo" alt="Vite logo" />
 					</a>
 					<Text size="xs" color="dimmed" className={classes.description}>
-				 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti iure nam explicabo excepturi et ipsum possimus neque id atque nihil eius porro asperiores, voluptates 
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti iure
+						nam explicabo excepturi et ipsum possimus neque id atque nihil eius porro
+						asperiores, voluptates
 					</Text>
 				</div>
 				<div className={classes.groups}>{groups}</div>
 			</Container>
 			<Container className={classes.afterFooter}>
 				<Text color="dimmed" size="sm">
-					© 2023 Edual.dev.
+					© 2023 Edbase
 				</Text>
 
 				<Group spacing={0} className={classes.social} position="right" noWrap>
