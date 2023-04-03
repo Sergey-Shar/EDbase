@@ -1,43 +1,27 @@
 {
-	"name": "edual",
-	"version": "1.0.0",
-	"description": "",
-	"private": true,
-	"scripts": {
-		"start": "npx webpack serve --mode development",
-		"build": "npx webpack --mode production"
-	},
-	"keywords": [],
-	"author": "Sharuha Sergei <sergeihar82@gmail.com>",
-	"license": "ISC",
-	"devDependencies": {
-		"@babel/core": "^7.21.3",
-		"@babel/preset-env": "^7.20.2",
-		"babel-loader": "^9.1.2",
-		"copy-webpack-plugin": "^11.0.0",
-		"css-loader": "^6.7.3",
-		"css-minimizer-webpack-plugin": "^4.2.2",
-		"html-loader": "^4.2.0",
-		"html-webpack-plugin": "^5.5.0",
-		"image-minimizer-webpack-plugin": "^3.8.2",
-		"imagemin": "^8.0.1",
-		"imagemin-gifsicle": "^7.0.0",
-		"imagemin-jpegtran": "^7.0.0",
-		"imagemin-optipng": "^8.0.0",
-		"imagemin-svgo": "^10.0.1",
-		"mini-css-extract-plugin": "^2.7.5",
-		"postcss": "^8.4.21",
-		"postcss-loader": "^7.1.0",
-		"postcss-preset-env": "^8.0.1",
-		"sass": "^1.59.3",
-		"sass-loader": "^13.2.1",
-		"terser-webpack-plugin": "^5.3.7",
-		"webpack": "^5.76.2",
-		"webpack-cli": "^5.0.1",
-		"webpack-dev-server": "^4.13.1",
-		"webpack-merge": "^5.8.0"
-	},
-	"dependencies": {
-		"swiper": "^9.1.1"
-	}
+  "name": "edual",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@mantine/core": "^6.0.5",
+    "@mantine/form": "^6.0.5",
+    "@mantine/hooks": "^6.0.5",
+    "@tabler/icons-react": "^2.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  }
 }
