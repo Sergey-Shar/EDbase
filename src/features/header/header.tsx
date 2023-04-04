@@ -56,7 +56,7 @@ export const  AppHeader = () => {
 	return (
 		<Box id="header" pb={60}>
 			<Header
-				sx={{ position: 'fixed'}}
+			 className={classes.header}
 				height={60}
 			>
 				<Container size="xl">
@@ -69,9 +69,6 @@ export const  AppHeader = () => {
 							spacing={0}
 							className={classes.hiddenMobile}
 						>
-							<a href="#" className={classes.link}>
-								Главная
-							</a>
 							<HoverCard
 								width={600}
 								position="bottom"

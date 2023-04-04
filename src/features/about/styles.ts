@@ -3,7 +3,7 @@ import { rem, createStyles } from '@mantine/core'
 export const useStyles = createStyles((theme) => ({
 	wrapper: {
 		backgroundColor:
-			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0]
+			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.white
 	},
 
 	image: {
@@ -42,7 +42,7 @@ export const useStyles = createStyles((theme) => ({
 		color: theme.colorScheme === 'dark' ? theme.white : theme.black,
 		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 		lineHeight: 1,
-		marginBottom: theme.spacing.md,
+		marginBottom: theme.spacing.xl,
 		marginTop: theme.spacing.md
 	}
 }))

@@ -1,6 +1,9 @@
 import { createStyles, rem } from "@mantine/styles";
 
 export const useStyles = createStyles((theme) => ({
+	header: {
+		 position: 'fixed' 
+	},
 	link: {
 		display: 'flex',
 		alignItems: 'center',
@@ -61,7 +64,7 @@ export const useStyles = createStyles((theme) => ({
 			display: 'none'
 		}
 	},
-		control: {
+	control: {
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
 		display: 'flex',
