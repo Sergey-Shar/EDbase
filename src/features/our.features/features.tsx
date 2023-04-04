@@ -49,7 +49,7 @@ export const  FeaturesGrid = ({
 	))
 
 	return (
-		<Container  size="xl" className={classes.wrapper}>
+		<Container id='features' size="xl" className={classes.wrapper}>
 			<Title className={classes.title}>{title}</Title>
 
 			<Container >
