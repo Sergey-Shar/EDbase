@@ -4,7 +4,8 @@ export const useStyles = createStyles((theme) => ({
 	wrapper: {
 		paddingTop: `calc(${theme.spacing.xl} * 3.5)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
-
+		backgroundColor:
+			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0]
 	},
 
 	title: {

@@ -49,26 +49,28 @@ export const  FeaturesGrid = ({
 	))
 
 	return (
-		<Container id='features' size="xl" className={classes.wrapper}>
-			<Title className={classes.title}>{title}</Title>
+		<div className={classes.wrapper}>
+			<Container id="features" size="xl">
+				<Title className={classes.title}>{title}</Title>
 
-			<Container >
-				<Text size="sm" className={classes.description}>
-					{description}
-				</Text>
+				<Container>
+					<Text size="sm" className={classes.description}>
+						{description}
+					</Text>
+				</Container>
+
+				<SimpleGrid
+					mt={60}
+					cols={3}
+					spacing={50}
+					breakpoints={[
+						{ maxWidth: 980, cols: 2, spacing: 'xl' },
+						{ maxWidth: 755, cols: 1, spacing: 'xl' }
+					]}
+				>
+					{features}
+				</SimpleGrid>
 			</Container>
-
-			<SimpleGrid
-				mt={60}
-				cols={3}
-				spacing={50}
-				breakpoints={[
-					{ maxWidth: 980, cols: 2, spacing: 'xl' },
-					{ maxWidth: 755, cols: 1, spacing: 'xl' }
-				]}
-			>
-				{features}
-			</SimpleGrid>
-		</Container>
+		</div>
 	)
 }

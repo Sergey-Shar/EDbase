@@ -57,7 +57,7 @@ export const HeroContent = () => {
 
 						<Group mt={30}>
 							<Button radius="xl" size="md" className={classes.control}>
-								Начать
+								Подписка
 							</Button>
 							<Button
 								variant="default"
@@ -65,7 +65,7 @@ export const HeroContent = () => {
 								size="md"
 								className={classes.control}
 							>
-								Посмотреть
+								Демо
 							</Button>
 						</Group>
 					</div>
