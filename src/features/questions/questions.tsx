@@ -7,7 +7,7 @@ const placeholder =
 export const  Questions = ()  => {
 	const { classes } = useStyles()
 	return (
-		<Container size="xl" className={classes.wrapper}>
+		<Container id="questions" size="xl" className={classes.wrapper}>
 			<Title align="center" className={classes.title}>
 				Часто задаваемые вопросы
 			</Title>

@@ -1,5 +1,4 @@
 import {
-	createStyles,
 	Image,
 	Container,
 	Title,
@@ -17,7 +16,7 @@ import { useStyles } from './styles'
 export const HeroContent = () => {
 	const { classes } = useStyles()
 	return (
-		<div>
+		<div className={classes.wrapper}>
 			<Container size="xl">
 				<div className={classes.inner}>
 					<div className={classes.content}>
@@ -47,12 +46,12 @@ export const HeroContent = () => {
 								and hooks export types
 							</List.Item>
 							<List.Item>
-								<b>JavaScript</b> – all packages have MIT license, you can use
-								Mantine in any project
+								<b>JavaScript</b> – all packages have MIT license, you can use Mantine
+								in any project
 							</List.Item>
 							<List.Item>
-								<b>React</b> – focus ring will appear only when user
-								navigates with keyboard
+								<b>React</b> – focus ring will appear only when user navigates with
+								keyboard
 							</List.Item>
 						</List>
 

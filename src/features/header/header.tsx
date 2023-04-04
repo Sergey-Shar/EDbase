@@ -17,20 +17,14 @@ import {
 	ScrollArea,
 	rem,
 	Container,
-	ActionIcon,
-	Tooltip,
-	Switch
 } from '@mantine/core'
 import viteLogo from '/vite.svg'
 import { useDisclosure } from '@mantine/hooks'
 import {
-	IconChevronDown, IconMoonStars, IconSun
+	IconChevronDown
 } from '@tabler/icons-react'
 import { useStyles } from './styles'
 import { mockdata } from './feature.data'
-import { useContext, useEffect, useState } from 'react'
-import { ColorModeContext } from 'src/context/theme.context'
-import { useLocalStorage } from 'src/hooks'
 import { ButtonToggleTheme } from './toggle.theme'
 
 
@@ -40,17 +34,6 @@ export const  AppHeader = () => {
 		useDisclosure(false)
 	const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false)
 	const { classes, theme } = useStyles()
-// 		const { value: checked, setValue: setChecked } = useLocalStorage<boolean>(
-// 			false,
-// 			'isChecked'
-// 		)
-
-// const toggleChecked = () => {
-// 	setChecked((prev) => !prev)
-// 	toggleColorMode()
-// }
-
-//  const { toggleColorMode } = useContext(ColorModeContext)
 
 	const links = mockdata.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
@@ -71,8 +54,11 @@ export const  AppHeader = () => {
 	))
 
 	return (
-		<Box id='header' pb={60}>
-			<Header sx={{ position: 'fixed' }} height={60}>
+		<Box id="header" pb={60}>
+			<Header
+				sx={{ position: 'fixed'}}
+				height={60}
+			>
 				<Container size="xl">
 					<Group position="apart" sx={{ height: rem(60) }}>
 						<a href="#header">
@@ -94,7 +80,7 @@ export const  AppHeader = () => {
 								withinPortal
 							>
 								<HoverCard.Target>
-									<a href="#" className={classes.link}>
+									<a href="#features" className={classes.link}>
 										<Center inline>
 											<Box component="span" mr={5}>
 												Фичи
@@ -137,11 +123,14 @@ export const  AppHeader = () => {
 									</div>
 								</HoverCard.Dropdown>
 							</HoverCard>
-							<a href="#" className={classes.link}>
-								Демо
-							</a>
-							<a href="#" className={classes.link}>
+							<a href="#about" className={classes.link}>
 								О нас
+							</a>
+							<a href="#questions" className={classes.link}>
+								Вопросы
+							</a>
+							<a href="#contacts" className={classes.link}>
+								Связаться
 							</a>
 						</Group>
 
@@ -195,10 +184,6 @@ export const  AppHeader = () => {
 						my="sm"
 						color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}
 					/>
-					{/* <Group position="center" grow pb="xl" px="md"> */}
-					{/* <Button variant="default">Log in</Button>
-						<Button>Sign up</Button> */}
-					{/* </Group> */}
 				</ScrollArea>
 			</Drawer>
 		</Box>

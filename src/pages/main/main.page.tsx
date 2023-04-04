@@ -4,6 +4,7 @@ import { AppFooter } from 'src/features/footer'
 import data from 'src/features/footer/data.json'
 import { Questions } from 'src/features/questions'
 import { Contacts } from 'src/features/contacts'
+import { About } from 'src/features/about'
 
 export const MainPage = () => {
 	return (
@@ -17,8 +18,9 @@ export const MainPage = () => {
 						consectetur facere quisquam facilis eos culpa voluptatum ab aperiam ipsa.
 						Magni, voluptates explicabo.`}
 			/>
+			<About/>
 			<Questions />
-			<Contacts/>
+			<Contacts />
 			<AppFooter data={data.data} />
 		</>
 	)
