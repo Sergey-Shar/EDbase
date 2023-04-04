@@ -18,7 +18,7 @@ export const MainPage = () => {
 						consectetur facere quisquam facilis eos culpa voluptatum ab aperiam ipsa.
 						Magni, voluptates explicabo.`}
 			/>
-			<About/>
+			<About />
 			<Questions />
 			<Contacts />
 			<AppFooter data={data.data} />

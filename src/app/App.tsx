@@ -6,14 +6,12 @@ import { MainPage } from '../pages'
 import './index.css'
 
 export const App = () => {
-	
 	const { value, setValue } = useLocalStorage<'light' | 'dark'>('light', 'theme')
-
 	const colorMode = useMemo(
 		() => ({
 			toggleColorMode: () => {
 				setValue((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
-			},
+			}
 		}),
 		[]
 	)

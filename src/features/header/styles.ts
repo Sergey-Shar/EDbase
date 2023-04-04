@@ -1,8 +1,8 @@
-import { createStyles, rem } from "@mantine/styles";
+import { createStyles, rem } from '@mantine/styles'
 
 export const useStyles = createStyles((theme) => ({
 	header: {
-		 position: 'fixed' 
+		position: 'fixed'
 	},
 	link: {
 		display: 'flex',

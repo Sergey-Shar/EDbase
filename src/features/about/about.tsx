@@ -19,9 +19,6 @@ export const About = () => {
 				<div className={classes.body}>
 					<div className={classes.content}>
 						<Title className={classes.title}>Наша команда</Title>
-						{/* <Text fw={500} fz="lg" mb={10}>
-							Как начинался наш стартап
-						</Text> */}
 						<Text fz="sm" c="dimmed">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore animi
 							illo minus aut sunt eveniet, aperiam, reprehenderit perferendis atque
