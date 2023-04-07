@@ -105,16 +105,13 @@ export const  AppHeader = () => {
 									</SimpleGrid>
 
 									<div className={classes.dropdownFooter}>
-										<Group position="apart">
-											<PDFDownloadLink document={<MyDocument />} fileName="features.pdf">
-												<Button variant="default">Сохранить в PDF</Button>
-											</PDFDownloadLink>
+										{/* <Group position="apart">
 											<PDFDownloadLink document={<MyDocument />} fileName="somename.pdf">
 												{({ blob, url, loading, error }) =>
-													loading ? 'Loading document...' : 'Download now!'
+													loading ? 'Loading document...' : 'Сохранить в PDF'
 												}
 											</PDFDownloadLink>
-										</Group>
+										</Group> */}
 									</div>
 								</HoverCard.Dropdown>
 							</HoverCard>
