@@ -1,9 +1,4 @@
-import {
-	Text,
-	Container,
-	ActionIcon,
-	Group,
-} from '@mantine/core'
+import { Text, Container, ActionIcon, Group } from '@mantine/core'
 import {
 	IconBrandTwitter,
 	IconBrandYoutube,
@@ -11,8 +6,6 @@ import {
 } from '@tabler/icons-react'
 import { useStyles } from './styles'
 import viteLogo from '/vite.svg'
-
-
 
 interface FooterLinksProps {
 	data: {
@@ -53,9 +46,8 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 						<img src={viteLogo} className="logo" alt="Vite logo" />
 					</a>
 					<Text size="xs" color="dimmed" className={classes.description}>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti iure
-						nam explicabo excepturi et ipsum possimus neque id atque nihil eius porro
-						asperiores, voluptates
+						Приложение в автоматическом режиме сохранит и структурирует материал
+						любого формата, создавая вашу персональную базу знаний.
 					</Text>
 				</div>
 				<div className={classes.groups}>{groups}</div>

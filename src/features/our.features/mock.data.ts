@@ -1,34 +1,47 @@
-import { IconCookie, IconGauge, IconLock, IconMessage2, IconUser } from "@tabler/icons-react";
+import {
+	IconUserSearch,
+	IconDownload,
+	IconEyeCheck,
+	IconVersions,
+	IconCalendarDown,
+	IconPageBreak
+} from '@tabler/icons-react'
 
 export const MOCKDATA = [
 	{
-		icon: IconGauge,
-		title: 'Extreme performance',
+		icon: IconDownload,
+		title: 'Автоматическое сохранение - ',
 		description:
-			'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit'
+			'Автоматически сохраняем важную информацию, которую вы хотите запомнить.'
 	},
 	{
-		icon: IconUser,
-		title: 'Privacy focused',
+		icon: IconCalendarDown,
+		title: 'Автоматическая систематизация',
 		description:
-			'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma'
+			'Приложение разбивает сохраненную информацию на логические блоки и структурирует их в виде майндмэпа.'
 	},
 	{
-		icon: IconCookie,
-		title: 'No third parties',
-		description:
-			'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves'
+		icon: IconPageBreak,
+		title: 'Генерация саммари -',
+		description: `Приложение выделит ключевые моменты из каждого блока информации и предоставит только самое важное.
+`
 	},
 	{
-		icon: IconLock,
-		title: 'Secure by default',
-		description:
-			'Although it still can’t fly, its jumping power is outstanding, in Alola the mushrooms on Paras don’t grow up quite right'
+		icon: IconEyeCheck,
+		title: 'Визуализация знаний - ',
+		description: `Вы видите свои знания в виде майндмэпа элементов с взаимосвязями.
+`
 	},
 	{
-		icon: IconMessage2,
-		title: '24/7 Support',
-		description:
-			'Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail'
+		icon: IconUserSearch,
+		title: 'Поиск по базе знаний - ',
+		description: `Легко находите нужную информацию в своей базе знаний.
+`
+	},
+	{
+		icon: IconVersions,
+		title: 'Различные форматы -',
+		description: `Возможность импортировать и систематизировать материалы в разных форматах: текст, видео, аудио, изображения.
+`
 	}
 ]

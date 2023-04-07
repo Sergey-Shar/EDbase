@@ -1,10 +1,8 @@
 import {
  Switch
 } from '@mantine/core'
-
 import {  IconMoonStars, IconSun } from '@tabler/icons-react'
-import { useContext } from 'react'
-import { ColorModeContext } from 'src/context/theme.context'
+import { useChangeTheme } from 'src/context/theme.context'
 import { useLocalStorage } from 'src/hooks'
 import { useStyles } from './styles'
 
@@ -17,11 +15,11 @@ export const ButtonToggleTheme = ()  => {
 		)
 
 		const toggleChecked = () => {
-			setChecked((prev) => !prev)
-			toggleColorMode()
+		setChecked((prev) => !prev)
+		toggleColorMode()
 		}
 
-		const { toggleColorMode } = useContext(ColorModeContext)
+		const { toggleColorMode } = useChangeTheme()
 
 	return (
 		<Switch

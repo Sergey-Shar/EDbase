@@ -7,71 +7,80 @@ import {
 	Text,
 	List,
 	ThemeIcon,
-	rem
+	rem,
 } from '@mantine/core'
 import { IconCheck } from '@tabler/icons-react'
 import heroImage from 'src/assets/images/hero-image.png'
 import { useStyles } from './styles'
+import { useDisclosure } from '@mantine/hooks'
+import { VideoModal } from './video.modal'
 
 export const HeroContent = () => {
+		const [opened, { open, close }] = useDisclosure(false)
+	
 	const { classes } = useStyles()
 	return (
-		<div className={classes.wrapper}>
-			<Container size="xl">
-				<div className={classes.inner}>
-					<div className={classes.content}>
-						<Title className={classes.title}>
-							Здесь <span className={classes.highlight}>что то</span> что <br /> должно
-							быть заголовком
-						</Title>
-						<Text color="dimmed" mt="md">
-							Просто рандомный текст, придумайте что тут должно быть) Lorem ipsum dolor
-							sit amet consectetur adipisicing elit. A, molestiae facere, labore fugiat
-							perferendis numquam commodi iste vitae optio unde quis repudiandae minus
-							explicabo officia deleniti cum quae. Id, impedit.
-						</Text>
+		<>
+			<VideoModal opened={opened} close={close} />
+			<div className={classes.wrapper}>
+				<Container size="xl">
+					<div className={classes.inner}>
+						<div className={classes.content}>
+							<Title className={classes.title}>
+								Сохраняй, <span className={classes.highlight}>систематизируй </span>и
+								визуализируй все
+								<br /> свои знания в одном месте.
+							</Title>
+							<Text color="dimmed" mt="md">
+								Приложение в автоматическом режиме сохранит и структурирует материал
+								любого формата, создавая вашу персональную базу знаний. Визуальное
+								представление майндмэпа позволит вам быстро находить нужную информацию и
+								видеть связи между знаниями.
+							</Text>
 
-						<List
-							mt={30}
-							spacing="sm"
-							size="sm"
-							icon={
-								<ThemeIcon size={20} radius="xl">
-									<IconCheck size={rem(12)} stroke={1.5} />
-								</ThemeIcon>
-							}
-						>
-							<List.Item>
-								<b>TypeScript ,база</b> – build type safe applications, all components
-								and hooks export types
-							</List.Item>
-							<List.Item>
-								<b>JavaScript</b> – all packages have MIT license, you can use Mantine
-								in any project
-							</List.Item>
-							<List.Item>
-								<b>React</b> – focus ring will appear only when user navigates with
-								keyboard
-							</List.Item>
-						</List>
-
-						<Group mt={30}>
-							<Button radius="xl" size="md" className={classes.control}>
-								Подписка
-							</Button>
-							<Button
-								variant="default"
-								radius="xl"
-								size="md"
-								className={classes.control}
+							<List
+								mt={30}
+								spacing="sm"
+								size="sm"
+								icon={
+									<ThemeIcon size={20} radius="xl">
+										<IconCheck size={rem(12)} stroke={1.5} />
+									</ThemeIcon>
+								}
 							>
-								Демо
-							</Button>
-						</Group>
+								<List.Item>
+									<b>Конспект -</b>
+									автоматическая обработка исходного материала, вычленение только важной
+									информации.
+								</List.Item>
+								<List.Item>
+									<b>Визуализация - </b>автоматическая систематизация информации в виде
+									майндмэпа.
+								</List.Item>
+								<List.Item>
+									<b>Простая навигация - </b> – легкость поиска необходимой информации.
+								</List.Item>
+							</List>
+
+							<Group mt={30}>
+								<Button radius="xl" size="md" className={classes.control}>
+									Пробовать
+								</Button>
+								<Button
+									variant="default"
+									radius="xl"
+									size="md"
+									className={classes.control}
+									onClick={open}
+								>
+									Как это работает?
+								</Button>
+							</Group>
+						</div>
+						<Image src={heroImage} className={classes.image} />
 					</div>
-					<Image src={heroImage} className={classes.image} />
-				</div>
-			</Container>
-		</div>
+				</Container>
+			</div>
+		</>
 	)
 }
