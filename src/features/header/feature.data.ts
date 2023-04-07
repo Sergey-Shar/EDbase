@@ -1,34 +1,47 @@
-import { IconBook, IconChartPie3, IconCode, IconCoin, IconFingerprint, IconNotification } from "@tabler/icons-react";
+import {
+	IconUserSearch,
+	IconDownload,
+	IconEyeCheck,
+	IconVersions,
+	IconCalendarDown,
+	IconPageBreak
+} from '@tabler/icons-react'
 
-export const mockdata = [
+export const MOCK_DATA = [
 	{
-		icon: IconCode,
-		title: 'Демо1',
-		description: 'This Pokémon’s cry is very loud and distracting'
+		icon: IconDownload,
+		title: 'Автоматическое сохранение - ',
+		description:
+			'Автоматически сохраняем важную информацию, которую вы хотите запомнить.'
 	},
 	{
-		icon: IconCoin,
-		title: 'Демо2',
-		description: 'The fluid of Smeargle’s tail secretions changes'
+		icon: IconCalendarDown,
+		title: 'Автоматическая систематизация',
+		description:
+			'Приложение разбивает сохраненную информацию на логические блоки и структурирует их в виде майндмэпа.'
 	},
 	{
-		icon: IconBook,
-		title: 'Демо3',
-		description: 'Yanma is capable of seeing 360 degrees without'
+		icon: IconPageBreak,
+		title: 'Генерация саммари -',
+		description: `Приложение выделит ключевые моменты из каждого блока информации и предоставит только самое важное.
+`
 	},
 	{
-		icon: IconFingerprint,
-		title: 'Демо4',
-		description: 'The shell’s rounded shape and the grooves on its.'
+		icon: IconEyeCheck,
+		title: 'Визуализация знаний - ',
+		description: `Вы видите свои знания в виде майндмэпа элементов с взаимосвязями.
+`
 	},
 	{
-		icon: IconChartPie3,
-		title: 'Демо5',
-		description: 'This Pokémon uses its flying ability to quickly chase'
+		icon: IconUserSearch,
+		title: 'Поиск по базе знаний - ',
+		description: `Легко находите нужную информацию в своей базе знаний.
+`
 	},
 	{
-		icon: IconNotification,
-		title: 'Демо6',
-		description: 'Combusken battles with the intensely hot flames it spews'
+		icon: IconVersions,
+		title: 'Различные форматы -',
+		description: `Возможность импортировать и систематизировать материалы в разных форматах: текст, видео, аудио, изображения.
+`
 	}
 ]

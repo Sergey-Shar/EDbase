@@ -5,19 +5,15 @@ import data from 'src/features/footer/data.json'
 import { Questions } from 'src/features/questions'
 import { Contacts } from 'src/features/contacts'
 import { About } from 'src/features/about'
+import { ScrollTopBtn } from 'src/features/scroll.top.dtn'
 
 export const MainPage = () => {
 	return (
 		<>
 			<AppHeader />
+			<ScrollTopBtn/>
 			<HeroContent />
-			<FeaturesGrid
-				title={'Фичи'}
-				description={`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-						dolores, tempore cumque praesentium reiciendis accusamus adipisci! Ipsum
-						consectetur facere quisquam facilis eos culpa voluptatum ab aperiam ipsa.
-						Magni, voluptates explicabo.`}
-			/>
+			<FeaturesGrid title={'Фичи'} />
 			<About />
 			<Questions />
 			<Contacts />

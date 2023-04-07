@@ -34,13 +34,11 @@ const Feature = ({ icon: Icon, title, description }: FeatureProps) => {
 
 interface FeaturesGridProps {
 	title: React.ReactNode;
-	description: React.ReactNode;
 	data?: FeatureProps[];
 }
 
 export const  FeaturesGrid = ({
 	title,
-	description,
 	data = MOCKDATA
 }: FeaturesGridProps) => {
 	const { classes } = useStyles()
@@ -52,13 +50,6 @@ export const  FeaturesGrid = ({
 		<div className={classes.wrapper}>
 			<Container id="features" size="xl">
 				<Title className={classes.title}>{title}</Title>
-
-				<Container>
-					<Text size="sm" className={classes.description}>
-						{description}
-					</Text>
-				</Container>
-
 				<SimpleGrid
 					mt={60}
 					cols={3}

@@ -55,6 +55,7 @@ export const useStyles = createStyles((theme) => ({
 			color: theme.primaryColor
 		}).background,
 		borderRadius: theme.radius.sm,
-		padding: `${rem(4)} ${rem(12)}`
+		padding: `${rem(4)} ${rem(5)}`,
+		marginRight: `${rem(5)}`
 	}
 }))

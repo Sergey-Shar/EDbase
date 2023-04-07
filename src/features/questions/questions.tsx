@@ -1,5 +1,6 @@
 import { Container, Title, Accordion, createStyles, rem } from '@mantine/core'
 import { useStyles } from './styles'
+import { ACCORDION_PLACEHOLDER } from './mock.data'
 
 const placeholder = `Lorem ipsum dolor sit 
 amet consectetur adipisicing elit. 
@@ -16,32 +17,14 @@ export const Questions = () => {
 				<Title align="center" className={classes.title}>
 					Часто задаваемые вопросы
 				</Title>
-				<Accordion variant="separated">
-					<Accordion.Item className={classes.item} value="reset-password">
-						<Accordion.Control>Вопрос ?</Accordion.Control>
-						<Accordion.Panel>{placeholder}</Accordion.Panel>
-					</Accordion.Item>
-
-					<Accordion.Item className={classes.item} value="another-account">
-						<Accordion.Control>Вопрос ?</Accordion.Control>
-						<Accordion.Panel>{placeholder}</Accordion.Panel>
-					</Accordion.Item>
-
-					<Accordion.Item className={classes.item} value="newsletter">
-						<Accordion.Control>Вопрос ?</Accordion.Control>
-						<Accordion.Panel>{placeholder}</Accordion.Panel>
-					</Accordion.Item>
-
-					<Accordion.Item className={classes.item} value="credit-card">
-						<Accordion.Control>Вопрос ?</Accordion.Control>
-						<Accordion.Panel>{placeholder}</Accordion.Panel>
-					</Accordion.Item>
-
-					<Accordion.Item className={classes.item} value="payment">
-						<Accordion.Control>Вопрос ?</Accordion.Control>
-						<Accordion.Panel>{placeholder}</Accordion.Panel>
-					</Accordion.Item>
-				</Accordion>
+				{ACCORDION_PLACEHOLDER.map((questions) => (
+					<Accordion key={questions._id} variant="separated">
+						<Accordion.Item className={classes.item} value={questions.question}>
+							<Accordion.Control>{questions.question}</Accordion.Control>
+							<Accordion.Panel>{questions.answer}</Accordion.Panel>
+						</Accordion.Item>
+					</Accordion>
+				))}
 			</Container>
 		</div>
 	)

@@ -24,8 +24,10 @@ import {
 	IconChevronDown
 } from '@tabler/icons-react'
 import { useStyles } from './styles'
-import { mockdata } from './feature.data'
+import { MOCK_DATA } from './feature.data'
 import { ButtonToggleTheme } from './toggle.theme'
+import { PDFDownloadLink } from '@react-pdf/renderer'
+import { MyDocument } from './document'
 
 
 
@@ -35,7 +37,7 @@ export const  AppHeader = () => {
 	const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false)
 	const { classes, theme } = useStyles()
 
-	const links = mockdata.map((item) => (
+	const links = MOCK_DATA.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
 			<Group noWrap align="flex-start">
 				<ThemeIcon size={34} variant="default" radius="md">
@@ -55,10 +57,7 @@ export const  AppHeader = () => {
 
 	return (
 		<Box id="header" pb={60}>
-			<Header
-			 className={classes.header}
-				height={60}
-			>
+			<Header className={classes.header} height={60}>
 				<Container size="xl">
 					<Group position="apart" sx={{ height: rem(60) }}>
 						<a href="#header">
@@ -90,7 +89,7 @@ export const  AppHeader = () => {
 								<HoverCard.Dropdown sx={{ overflow: 'hidden' }}>
 									<Group position="apart" px="md">
 										<Text fw={500}> Фичи </Text>
-										<Anchor href="#" fz="xs">
+										<Anchor href="#features" fz="xs">
 											Посмотреть все
 										</Anchor>
 									</Group>
@@ -107,15 +106,14 @@ export const  AppHeader = () => {
 
 									<div className={classes.dropdownFooter}>
 										<Group position="apart">
-											<div>
-												<Text fw={500} fz="sm">
-													Начать
-												</Text>
-												<Text size="xs" color="dimmed">
-													какой то текст
-												</Text>
-											</div>
-											<Button variant="default">Начать</Button>
+											<PDFDownloadLink document={<MyDocument />} fileName="features.pdf">
+												<Button variant="default">Сохранить в PDF</Button>
+											</PDFDownloadLink>
+											<PDFDownloadLink document={<MyDocument />} fileName="somename.pdf">
+												{({ blob, url, loading, error }) =>
+													loading ? 'Loading document...' : 'Download now!'
+												}
+											</PDFDownloadLink>
 										</Group>
 									</div>
 								</HoverCard.Dropdown>
