@@ -1,5 +1,6 @@
 import { Modal, useMantineTheme } from '@mantine/core'
 import './styles.css'
+import { VideoPlayer } from 'src/shared/videoPlayer.tsx'
 
 export const VideoModal = ({
 	opened,
@@ -26,13 +27,7 @@ export const VideoModal = ({
 					blur: 3
 				}}
 			>
-				<div className="embed-container">
-					<iframe
-						src="https://www.youtube.com/embed/WgqIBEJsF1M"
-						title="YouTube video player"
-						allowFullScreen
-					></iframe>
-				</div>
+				<VideoPlayer />
 			</Modal>
 		</>
 	)

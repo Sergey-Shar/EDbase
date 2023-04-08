@@ -30,8 +30,7 @@ export const HeroContent = () => {
 					<div className={classes.inner}>
 						<div className={classes.content}>
 							<Title className={classes.title}>
-								Сохраняй, <span className={classes.highlight}>систематизируй </span>и
-								визуализируй все
+								Сохраняй, <span className={classes.highlight}>систематизируй </span>
 								<br /> свои знания в одном месте.
 							</Title>
 							<Text color="dimmed" mt="md">
@@ -61,7 +60,7 @@ export const HeroContent = () => {
 									майндмэпа.
 								</List.Item>
 								<List.Item>
-									<b>Простая навигация - </b> – легкость поиска необходимой информации.
+									<b>Простая навигация - </b>  легкость поиска необходимой информации.
 								</List.Item>
 							</List>
 
@@ -72,7 +71,7 @@ export const HeroContent = () => {
 									size="md"
 									className={classes.control}
 								>
-									Лист ожидания
+									Пробовать
 								</Button>
 								<Button
 									variant="default"
