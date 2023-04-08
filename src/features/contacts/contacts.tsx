@@ -42,6 +42,7 @@ const { classes } = useStyles()
 
 					<SimpleGrid cols={2} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 						<TextInput
+							data-autofocus
 							label="Имя"
 							placeholder="Ваше имя"
 							name="name"

@@ -1,24 +1,27 @@
-import {
-	createStyles,
-	rem
-} from '@mantine/core'
+import { createStyles, rem } from '@mantine/core'
 
 export const useStyles = createStyles((theme) => ({
 	footer: {
 		paddingTop: `calc(${theme.spacing.xl} * 2)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
 		backgroundColor:
-			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0]
 	},
 
 	logo: {
 		maxWidth: rem(200),
-
 		[theme.fn.smallerThan('sm')]: {
 			display: 'flex',
 			flexDirection: 'column',
 			alignItems: 'center'
 		}
+	},
+
+	logoIcon: {
+		background: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.white,
+		borderRadius: '50%',
+		width: '3rem',
+		height: '3rem'
 	},
 
 	description: {

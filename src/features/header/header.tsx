@@ -2,7 +2,6 @@ import {
 	Header,
 	HoverCard,
 	Group,
-	Button,
 	UnstyledButton,
 	Text,
 	SimpleGrid,
@@ -18,11 +17,9 @@ import {
 	rem,
 	Container,
 } from '@mantine/core'
-import viteLogo from '/vite.svg'
+import logo from '../../assets/images/logo.png'
 import { useDisclosure } from '@mantine/hooks'
-import {
-	IconChevronDown
-} from '@tabler/icons-react'
+import {IconChevronDown} from '@tabler/icons-react'
 import { useStyles } from './styles'
 import { MOCK_DATA } from './feature.data'
 import { ButtonToggleTheme } from './toggle.theme'
@@ -61,7 +58,11 @@ export const  AppHeader = () => {
 				<Container size="xl">
 					<Group position="apart" sx={{ height: rem(60) }}>
 						<a href="#header">
-							<img src={viteLogo} className="logo" alt="Vite logo" />
+							<img
+								src={logo}
+							 className={classes.logo}
+								alt="Ed base logo"
+							/>
 						</a>
 						<Group
 							sx={{ height: '100%' }}
@@ -154,7 +155,7 @@ export const  AppHeader = () => {
 						color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}
 					/>
 
-					<a href="#" className={classes.link}>
+					<a onClick={closeDrawer} className={classes.link}>
 						Главная
 					</a>
 					<UnstyledButton className={classes.link} onClick={toggleLinks}>
@@ -166,10 +167,7 @@ export const  AppHeader = () => {
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{links}</Collapse>
-					<a href="#" className={classes.link}>
-						Посмотреть все
-					</a>
-					<a href="#" className={classes.link}>
+					<a onClick={closeDrawer} href="#about" className={classes.link}>
 						О нас
 					</a>
 					<Divider

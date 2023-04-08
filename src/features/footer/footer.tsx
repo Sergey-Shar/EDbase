@@ -5,8 +5,7 @@ import {
 	IconBrandInstagram
 } from '@tabler/icons-react'
 import { useStyles } from './styles'
-import viteLogo from '/vite.svg'
-
+import logo from '../../assets/images/logo.png'
 interface FooterLinksProps {
 	data: {
 		title: string
@@ -43,7 +42,7 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 			<Container size="xl" className={classes.inner}>
 				<div className={classes.logo}>
 					<a href="#header">
-						<img src={viteLogo} className="logo" alt="Vite logo" />
+						<img src={logo} className={classes.logoIcon} alt="Vite logo" />
 					</a>
 					<Text size="xs" color="dimmed" className={classes.description}>
 						Приложение в автоматическом режиме сохранит и структурирует материал
