@@ -8,6 +8,7 @@ import {
 	List,
 	ThemeIcon,
 	rem,
+	Notification
 } from '@mantine/core'
 import { IconCheck } from '@tabler/icons-react'
 import heroImage from 'src/assets/images/hero-image.png'
@@ -60,7 +61,7 @@ export const HeroContent = () => {
 									майндмэпа.
 								</List.Item>
 								<List.Item>
-									<b>Простая навигация - </b>  легкость поиска необходимой информации.
+									<b>Простая навигация - </b> легкость поиска необходимой информации.
 								</List.Item>
 							</List>
 

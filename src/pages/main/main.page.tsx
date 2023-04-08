@@ -17,7 +17,7 @@ export const MainPage = () => {
 			<HeroContent />
 			<FeaturesGrid title={'Фичи'} />
 			<VideoSection />
-			<WaitingList/>
+			<WaitingList />
 			<Questions />
 			<About />
 			<Contacts />
