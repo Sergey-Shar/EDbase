@@ -62,7 +62,7 @@ export const WaitingList = () => {
 					{isShowNotic && (
 						<Notification
 							top={-90}
-							style={{ position: 'absolute', width: '35rem', zIndex: '60000' }}
+							style={{ position: 'absolute'}}
 							withCloseButton={false}
 							icon={<IconCheck size="1.2rem" />}
 							title={name}
