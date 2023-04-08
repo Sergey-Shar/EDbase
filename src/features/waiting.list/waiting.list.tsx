@@ -40,7 +40,7 @@ export const WaitingList = () => {
 					Пробовать
 				</Title>
 				<Container size={640}>
-					<Text size="md" className={classes.description}>
+					<Text color="dimmed" size="md" className={classes.description}>
 						Спасибо, что заинтересовались нашим приложением! Мы все еще работаем над
 						ним, чтобы сделать его максимально полезным и удобным для вас. Оставьте
 						свой контакт в листе ожидания и получите одним из первых рабочую версию
