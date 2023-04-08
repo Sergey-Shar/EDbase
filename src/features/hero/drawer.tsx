@@ -1,6 +1,17 @@
+import {
+	Drawer,
+	Group,
+	Button,
+	TextInput,
+	Text,
 
-import { Drawer, Group, Button, TextInput, Text } from '@mantine/core'
+} from '@mantine/core'
 import { useForm } from '@mantine/form'
+import { randomId } from '@mantine/hooks'
+import axios from 'axios'
+
+export const BASE_URL =
+	'https://edbase-3a55f-default-rtdb.europe-west1.firebasedatabase.app/user.json'
 
 export const DrawerReviews = ({
 	opened,
@@ -12,12 +23,30 @@ export const DrawerReviews = ({
 
 const form = useForm({
 	initialValues: {
+		name: '',
 		telegram: ''
 	},
 	validate: {
+		name: (value) => value.trim().length < 2,
 		telegram: (value) => value.trim().length < 2
 	}
 })
+
+ const handleSubmit  =  form.onSubmit((userName) => {
+		axios
+			.post(BASE_URL, {
+				userName: {
+					...userName,
+					_id: randomId()
+				}
+			})
+			.then((res) => console.log(res))
+			.finally(() => {
+				form.reset()
+				close()
+			})
+	})
+
 
 	return (
 		<>
@@ -28,9 +57,16 @@ const form = useForm({
 				title="Лист ожидания"
 				overlayProps={{ opacity: 0.5, blur: 4 }}
 			>
-				<form onSubmit={form.onSubmit(() => {})}>
+				<form onSubmit={handleSubmit}>
 					<TextInput
 						data-autofocus
+						label="Имя"
+						placeholder="Ваше имя"
+						name="name"
+						variant="filled"
+						{...form.getInputProps('name')}
+					/>
+					<TextInput
 						label="Никнейм"
 						placeholder="Ваш никнейм в телеграм"
 						name="telegram"
