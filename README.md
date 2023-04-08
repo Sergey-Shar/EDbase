@@ -1,3 +1,3 @@
-# EDual
+# EDBase
 
 https://e-dbase.vercel.app/
