@@ -1,3 +1,3 @@
 # EDual
 
-https://e-dual.vercel.app/
+https://e-dbase.vercel.app/
