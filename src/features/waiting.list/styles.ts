@@ -13,7 +13,6 @@ export const useStyles = createStyles((theme) => ({
 		marginBottom: `calc(${theme.spacing.xl} * 1.5)`
 	},
 	description: {
-		color: theme.colors.gray[0],
 		textAlign: 'center',
 		margin:'2rem 0',
 
