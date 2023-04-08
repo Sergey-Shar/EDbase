@@ -14,14 +14,17 @@ import heroImage from 'src/assets/images/hero-image.png'
 import { useStyles } from './styles'
 import { useDisclosure } from '@mantine/hooks'
 import { VideoModal } from './video.modal'
+import { DrawerReviews } from './drawer'
 
 export const HeroContent = () => {
-		const [opened, { open, close }] = useDisclosure(false)
+		const [openedModal, { open:openModal, close:closeModal }] = useDisclosure(false)
+	 const [openedDrawer, { open: openDrawer, close: closeDrawer }] = useDisclosure(false)
 	
-	const { classes } = useStyles()
+		const { classes } = useStyles()
 	return (
 		<>
-			<VideoModal opened={opened} close={close} />
+			<VideoModal opened={openedModal} close={closeModal} />
+			<DrawerReviews opened={openedDrawer} close={closeDrawer} />
 			<div className={classes.wrapper}>
 				<Container size="xl">
 					<div className={classes.inner}>
@@ -63,15 +66,20 @@ export const HeroContent = () => {
 							</List>
 
 							<Group mt={30}>
-								<Button radius="xl" size="md" className={classes.control}>
-									Пробовать
+								<Button
+									onClick={openDrawer}
+									radius="xl"
+									size="md"
+									className={classes.control}
+								>
+									Лист ожидания
 								</Button>
 								<Button
 									variant="default"
 									radius="xl"
 									size="md"
 									className={classes.control}
-									onClick={open}
+									onClick={openModal}
 								>
 									Как это работает?
 								</Button>
