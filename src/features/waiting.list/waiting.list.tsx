@@ -12,19 +12,15 @@ import { useForm } from '@mantine/form'
 import { useStyles } from './styles'
 
 export const WaitingList = () => {
-	const form = useForm({
-		initialValues: {
-			name: '',
-			email: '',
-			subject: '',
-			message: ''
-		},
-		validate: {
-			name: (value) => value.trim().length < 2,
-			email: (value) => !/^\S+@\S+$/.test(value),
-			subject: (value) => value.trim().length === 0
-		}
-	})
+
+const form = useForm({
+	initialValues: {
+		telegram: ''
+	},
+	validate: {
+		telegram: (value) => value.trim().length < 2
+	}
+})
 
 	const { classes } = useStyles()
 
@@ -48,18 +44,11 @@ export const WaitingList = () => {
 					<SimpleGrid cols={1} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 						<TextInput
 							data-autofocus
-							label="Имя"
-							placeholder="Ваше имя"
-							name="name"
+							label="Никнейм"
+							placeholder="Ваш никнейм в телеграм"
+							name="telegram"
 							variant="filled"
-							{...form.getInputProps('name')}
-						/>
-						<TextInput
-							label="Почта"
-							placeholder="Ваша почта"
-							name="email"
-							variant="filled"
-							{...form.getInputProps('email')}
+							{...form.getInputProps('telegram')}
 						/>
 					</SimpleGrid>
 					<Group position="center" mt="xl">

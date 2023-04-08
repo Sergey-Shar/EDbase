@@ -10,16 +10,14 @@ export const DrawerReviews = ({
 	close: () => void
 }) => {
 
- const form = useForm({
-		initialValues: {
-			name: '',
-			email: '',
-		},
-		validate: {
-			name: (value) => value.trim().length < 2,
-			email: (value) => !/^\S+@\S+$/.test(value),
-		}
-	})
+const form = useForm({
+	initialValues: {
+		telegram: ''
+	},
+	validate: {
+		telegram: (value) => value.trim().length < 2
+	}
+})
 
 	return (
 		<>
@@ -31,8 +29,14 @@ export const DrawerReviews = ({
 				overlayProps={{ opacity: 0.5, blur: 4 }}
 			>
 				<form onSubmit={form.onSubmit(() => {})}>
-					<TextInput data-autofocus label="Имя" placeholder="Ваше имя" />
-					<TextInput label="Почта" placeholder="Ваша почта" mt="md" />
+					<TextInput
+						data-autofocus
+						label="Никнейм"
+						placeholder="Ваш никнейм в телеграм"
+						name="telegram"
+						variant="filled"
+						{...form.getInputProps('telegram')}
+					/>
 					<Group mt="xl">
 						<Button type="submit" size="md">
 							Отправить
