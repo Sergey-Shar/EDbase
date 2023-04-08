@@ -2,13 +2,6 @@ import { Container, Title, Accordion, createStyles, rem } from '@mantine/core'
 import { useStyles } from './styles'
 import { ACCORDION_PLACEHOLDER } from './mock.data'
 
-const placeholder = `Lorem ipsum dolor sit 
-amet consectetur adipisicing elit. 
-Vero impedit itaque voluptatem, ducimus quos 
-nisi nesciunt mollitia officia animi laborum. 
-Debitis ratione totam ea numquam magnam asperiores 
-repudiandae qui minus.`
-
 export const Questions = () => {
 	const { classes } = useStyles()
 	return (

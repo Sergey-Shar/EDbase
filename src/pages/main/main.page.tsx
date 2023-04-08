@@ -6,16 +6,20 @@ import { Questions } from 'src/features/questions'
 import { Contacts } from 'src/features/contacts'
 import { About } from 'src/features/about'
 import { ScrollTopBtn } from 'src/features/scroll.top.dtn'
+import { VideoSection } from 'src/features/video'
+import { WaitingList } from 'src/features/waiting.list'
 
 export const MainPage = () => {
 	return (
 		<>
 			<AppHeader />
-			<ScrollTopBtn/>
+			<ScrollTopBtn />
 			<HeroContent />
 			<FeaturesGrid title={'Фичи'} />
-			<About />
+			<VideoSection />
+			<WaitingList/>
 			<Questions />
+			<About />
 			<Contacts />
 			<AppFooter data={data.data} />
 		</>
