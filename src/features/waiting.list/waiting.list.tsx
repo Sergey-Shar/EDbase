@@ -5,17 +5,14 @@ import {
 	Title,
 	Button,
 	Container,
-	Text,
-	Notification,
-	Alert
+	Text
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useStyles } from './styles'
-import axios from 'axios'
 import { randomId } from '@mantine/hooks'
-import { BASE_URL } from '../hero/drawer'
-import { useState } from 'react'
-import { IconAlertCircle, IconCheck } from '@tabler/icons-react'
+import api from 'src/app/services/api'
+import { showNotification } from 'src/shared/utils/showNotification'
+import { isAxiosError } from 'axios'
 
 export const WaitingList = () => {
 	const form = useForm({
@@ -30,46 +27,29 @@ export const WaitingList = () => {
 	})
 
 	const { classes } = useStyles()
-	const [isShowNotic, setIsShowNotic] = useState(false)
-	const [name, setName] = useState('')
 
-	const handleSubmit = form.onSubmit((userName) => {
-		axios
-			.post(BASE_URL, {
-				userName: {
-					...userName,
-					_id: randomId()
-				}
+	const handleSubmit = form.onSubmit(async (userData) => {
+		try {
+			api.submitNicknameTelegram('user.json', {
+				...userData,
+				_id: randomId()
 			})
-			.then((res) => console.log(res))
-			.then(() => {
-				setName(userName.name)
-				setIsShowNotic(true)
-			})
-			.finally(() => {
-				form.reset()
-				setTimeout(() => {
-					setIsShowNotic(false)
-					setName('')
-				}, 2500)
-			})
+			form.reset()
+			showNotification(
+				'teal',
+				userData.name,
+			)
+		} catch (error) {
+			 if(isAxiosError(error)){
+    	showNotification('red', 'Error', error?.message, false)
+				} else{console.log(error)}
+		}
 	})
 
 	return (
 		<>
 			<div id="contacts" className={classes.wrapper}>
-				<Container size="xs" style={{ position: 'relative' }}>
-					{isShowNotic && (
-						<Notification
-							top={-90}
-							style={{ position: 'absolute'}}
-							withCloseButton={false}
-							icon={<IconCheck size="1.2rem" />}
-							title={name}
-						>
-							Спасибо! Вы добавлены в лист ожидания.
-						</Notification>
-					)}
+				<Container size="xs">
 					<Title
 						order={2}
 						size="h1"

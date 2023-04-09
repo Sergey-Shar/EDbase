@@ -1,5 +1,4 @@
 import { Modal, useMantineTheme } from '@mantine/core'
-import './styles.css'
 import { VideoPlayer } from 'src/shared/videoPlayer'
 
 export const VideoModal = ({
