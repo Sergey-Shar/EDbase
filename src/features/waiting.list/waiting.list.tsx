@@ -12,7 +12,7 @@ import { useStyles } from './styles'
 import { randomId } from '@mantine/hooks'
 import api from 'src/app/services/api'
 import { showNotification } from 'src/shared/utils/showNotification'
-import { isAxiosError } from 'axios'
+import { isAxiosError }  from 'axios'
 
 export const WaitingList = () => {
 	const form = useForm({
@@ -41,8 +41,11 @@ export const WaitingList = () => {
 			)
 		} catch (error) {
 			 if(isAxiosError(error)){
-    	showNotification('red', 'Error', error?.message, false)
-				} else{console.log(error)}
+   showNotification('red', 'Error', error?.message, false)
+				} 
+				else if( error instanceof Error){
+					showNotification('red', 'Error', error?.message, false)
+				}
 		}
 	})
 
