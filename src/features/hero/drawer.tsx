@@ -4,14 +4,15 @@ import {
 	Button,
 	TextInput,
 	Text,
-
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { randomId } from '@mantine/hooks'
-import axios from 'axios'
 
-export const BASE_URL =
-	'https://edbase-3a55f-default-rtdb.europe-west1.firebasedatabase.app/user.json'
+import { isAxiosError } from 'axios'
+import api from 'src/app/services/api'
+import { showNotification } from 'src/shared/utils/showNotification'
+
+
 
 export const DrawerReviews = ({
 	opened,
@@ -32,19 +33,22 @@ const form = useForm({
 	}
 })
 
- const handleSubmit  =  form.onSubmit((userName) => {
-		axios
-			.post(BASE_URL, {
-				userName: {
-					...userName,
-					_id: randomId()
-				}
+ const handleSubmit  =  form.onSubmit((userData) => {
+		try {
+			api.submitNicknameTelegram('user.json', {
+				...userData,
+				_id: randomId()
 			})
-			.then((res) => console.log(res))
-			.finally(() => {
-				form.reset()
-				close()
-			})
+			close()
+			form.reset()
+			showNotification('teal', userData.name)
+		} catch (error) {
+			if (isAxiosError(error)) {
+				showNotification('red', 'Error', error?.message, false)
+			} else {
+				console.log(error)
+			}
+		}
 	})
 
 
