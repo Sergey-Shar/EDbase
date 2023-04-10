@@ -9,6 +9,7 @@ import {
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useStyles } from './styles'
+import { IconAt, IconUser, IconMessage2Check } from '@tabler/icons-react'
 
 export const Contacts = () => {
 	const form = useForm({
@@ -19,9 +20,9 @@ export const Contacts = () => {
 			message: ''
 		},
 		validate: {
-			name: (value) => value.trim().length < 2,
-			email: (value) => !/^\S+@\S+$/.test(value),
-			subject: (value) => value.trim().length === 0
+			name: (value) => (value.length < 2 ? 'Поле не должно быть пустым' : null),
+			email: (value) => !/^\S+@\S+$/.test(value) ?  'Email введен не корректно' : null,
+			subject: (value) => value.trim().length === 0 ? 'Поле не должно быть пустым' : null
 		}
 	})
 
@@ -43,6 +44,7 @@ const { classes } = useStyles()
 					<SimpleGrid cols={2} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 						<TextInput
 							data-autofocus
+							icon={<IconUser size={'1rem'} />}
 							label="Имя"
 							placeholder="Ваше имя"
 							name="name"
@@ -50,6 +52,7 @@ const { classes } = useStyles()
 							{...form.getInputProps('name')}
 						/>
 						<TextInput
+							icon={<IconAt size="1rem" />}
 							label="Почта"
 							placeholder="Ваша почта"
 							name="email"

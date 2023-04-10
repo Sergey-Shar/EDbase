@@ -6,7 +6,11 @@ export const useStyles = createStyles((theme) => ({
 		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
 		minHeight: 550,
 		backgroundColor:
-			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0]
+			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+		[theme.fn.smallerThan('md')]: {
+			backgroundColor:
+				theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.white
+		}
 	},
 
 	title: {
@@ -14,7 +18,7 @@ export const useStyles = createStyles((theme) => ({
 	},
 	description: {
 		textAlign: 'center',
-		margin:'2rem 0',
+		margin: '2rem 0',
 
 		[theme.fn.smallerThan('xs')]: {
 			fontSize: theme.fontSizes.md,

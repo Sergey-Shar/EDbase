@@ -1,4 +1,3 @@
-
 import {
 	Player,
 	ControlBar,
@@ -14,7 +13,7 @@ import video from '../../assets/videos/video.mp4'
 
 export const VideoPlayer = () => {
 	return (
-				<Player autoPlay>
+				<Player>
 					<source src={video} />
 					<BigPlayButton position="center" />
 					<ControlBar>

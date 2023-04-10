@@ -18,8 +18,6 @@ export const useStyles = createStyles((theme) => ({
 	},
 
 	logoIcon: {
-		background: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.white,
-		borderRadius: '50%',
 		width: '3rem',
 		height: '3rem'
 	},

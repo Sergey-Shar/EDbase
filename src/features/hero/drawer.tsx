@@ -1,18 +1,11 @@
-import {
-	Drawer,
-	Group,
-	Button,
-	TextInput,
-	Text,
-} from '@mantine/core'
+import { Drawer, Group, Button, TextInput, Text } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { randomId } from '@mantine/hooks'
+import { IconBrandTelegram, IconUser } from '@tabler/icons-react'
 
 import { isAxiosError } from 'axios'
 import api from 'src/app/services/api'
 import { showNotification } from 'src/shared/utils/showNotification'
-
-
 
 export const DrawerReviews = ({
 	opened,
@@ -21,19 +14,24 @@ export const DrawerReviews = ({
 	opened: boolean
 	close: () => void
 }) => {
+	const form = useForm({
+		initialValues: {
+			name: '',
+			telegram: ''
+		},
+		validate: {
+			name: (value) => (value.length < 2 ? 'Поле не должно быть пустым' : null),
+			telegram: (value) => {
+				if (value.length < 2) {
+					return 'Поле не должно быть пустым'
+				} else if (!/@/g.test(value)) {
+					return 'Укажите символ @ перед вашим ником'
+				}
+			}
+		}
+	})
 
-const form = useForm({
-	initialValues: {
-		name: '',
-		telegram: ''
-	},
-	validate: {
-		name: (value) => value.trim().length < 2,
-		telegram: (value) => value.trim().length < 2
-	}
-})
-
- const handleSubmit  =  form.onSubmit((userData) => {
+	const handleSubmit = form.onSubmit((userData) => {
 		try {
 			api.submitNicknameTelegram('user.json', {
 				...userData,
@@ -51,7 +49,6 @@ const form = useForm({
 		}
 	})
 
-
 	return (
 		<>
 			<Drawer
@@ -64,6 +61,7 @@ const form = useForm({
 				<form onSubmit={handleSubmit}>
 					<TextInput
 						data-autofocus
+						icon={<IconUser size={'1rem'} />}
 						label="Имя"
 						placeholder="Ваше имя"
 						name="name"
@@ -71,10 +69,13 @@ const form = useForm({
 						{...form.getInputProps('name')}
 					/>
 					<TextInput
-						label="Никнейм"
-						placeholder="Ваш никнейм в телеграм"
+						icon={<IconBrandTelegram size={'1rem'} />}
+						label="Телеграм"
+						placeholder="Ваш телеграм"
 						name="telegram"
 						variant="filled"
+						description="Введите ваш ник в телеграм в формате @nickname"
+						inputWrapperOrder={['label', 'error', 'input', 'description']}
 						{...form.getInputProps('telegram')}
 					/>
 					<Group mt="xl">

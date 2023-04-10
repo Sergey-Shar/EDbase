@@ -21,12 +21,8 @@ import logo from '../../assets/images/logo.png'
 import { useDisclosure } from '@mantine/hooks'
 import {IconChevronDown} from '@tabler/icons-react'
 import { useStyles } from './styles'
-import { MOCK_DATA } from './feature.data'
+import { MOCK_DATA, featureMenu } from './feature.data'
 import { ButtonToggleTheme } from './toggle.theme'
-import { PDFDownloadLink } from '@react-pdf/renderer'
-import { MyDocument } from './document'
-
-
 
 export const  AppHeader = () => {
 	const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
@@ -34,7 +30,7 @@ export const  AppHeader = () => {
 	const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false)
 	const { classes, theme } = useStyles()
 
-	const links = MOCK_DATA.map((item) => (
+	const links = featureMenu.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
 			<Group noWrap align="flex-start">
 				<ThemeIcon size={34} variant="default" radius="md">
@@ -53,16 +49,12 @@ export const  AppHeader = () => {
 	))
 
 	return (
-		<Box id="header" pb={60}>
+		<Box id="header" className={classes.wrapper}>
 			<Header className={classes.header} height={60}>
 				<Container size="xl">
 					<Group position="apart" sx={{ height: rem(60) }}>
 						<a href="#header">
-							<img
-								src={logo}
-							 className={classes.logo}
-								alt="Ed base logo"
-							/>
+							<img src={logo} className={classes.logo} alt="Ed base logo" />
 						</a>
 						<Group
 							sx={{ height: '100%' }}
@@ -90,30 +82,15 @@ export const  AppHeader = () => {
 								<HoverCard.Dropdown sx={{ overflow: 'hidden' }}>
 									<Group position="apart" px="md">
 										<Text fw={500}> Фичи </Text>
-										<Anchor href="#features" fz="xs">
-											Посмотреть все
-										</Anchor>
 									</Group>
-
 									<Divider
 										my="sm"
 										mx="-md"
 										color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}
 									/>
-
 									<SimpleGrid cols={2} spacing={0}>
 										{links}
 									</SimpleGrid>
-
-									<div className={classes.dropdownFooter}>
-										{/* <Group position="apart">
-											<PDFDownloadLink document={<MyDocument />} fileName="somename.pdf">
-												{({ blob, url, loading, error }) =>
-													loading ? 'Loading document...' : 'Сохранить в PDF'
-												}
-											</PDFDownloadLink>
-										</Group> */}
-									</div>
 								</HoverCard.Dropdown>
 							</HoverCard>
 							<a href="#about" className={classes.link}>
@@ -122,11 +99,10 @@ export const  AppHeader = () => {
 							<a href="#questions" className={classes.link}>
 								Вопросы
 							</a>
-							<a href="#contacts" className={classes.link}>
-								Связаться
+							<a href="#waiting" className={classes.link}>
+								Пробовать
 							</a>
 						</Group>
-
 						<Group className={classes.hiddenMobile}>
 							<ButtonToggleTheme />
 						</Group>
@@ -154,10 +130,6 @@ export const  AppHeader = () => {
 						my="sm"
 						color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}
 					/>
-
-					<a onClick={closeDrawer} className={classes.link}>
-						Главная
-					</a>
 					<UnstyledButton className={classes.link} onClick={toggleLinks}>
 						<Center inline>
 							<Box component="span" mr={5}>
@@ -167,9 +139,6 @@ export const  AppHeader = () => {
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{links}</Collapse>
-					<a onClick={closeDrawer} href="#about" className={classes.link}>
-						О нас
-					</a>
 					<Divider
 						my="sm"
 						color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}

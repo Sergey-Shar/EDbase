@@ -1,15 +1,18 @@
 import { createStyles, rem } from '@mantine/styles'
 
 export const useStyles = createStyles((theme) => ({
+	wrapper: {
+		paddingTop: '4rem',
+		[theme.fn.smallerThan('xs')]: {
+			paddingTop: '1.5rem'
+		}
+	},
 	header: {
 		position: 'fixed'
 	},
-	logo:{
-			background:
-		 theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-			borderRadius: '50%',
-			width: '3rem',
-			height: '3rem',
+	logo: {
+		width: '2.5rem',
+		height: '2.5rem'
 	},
 	link: {
 		display: 'flex',

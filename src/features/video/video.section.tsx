@@ -6,7 +6,7 @@ export const VideoSection = () => {
 	const { classes } = useStyles()
 	return (
 		<div className={classes.wrapper}>
-			<Container id="questions" size="xl">
+			<Container id="questions" size="lg">
 				<Title align="center" className={classes.title}>
 					Как это работает?
 				</Title>

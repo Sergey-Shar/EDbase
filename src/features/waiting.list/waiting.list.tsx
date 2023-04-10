@@ -4,15 +4,15 @@ import {
 	Group,
 	Title,
 	Button,
-	Container,
-	Text
+	Container
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useStyles } from './styles'
 import { randomId } from '@mantine/hooks'
 import api from 'src/app/services/api'
 import { showNotification } from 'src/shared/utils/showNotification'
-import { isAxiosError }  from 'axios'
+import { isAxiosError } from 'axios'
+import { IconBrandTelegram, IconUser } from '@tabler/icons-react'
 
 export const WaitingList = () => {
 	const form = useForm({
@@ -21,8 +21,14 @@ export const WaitingList = () => {
 			telegram: ''
 		},
 		validate: {
-			name: (value) => value.trim().length < 2,
-			telegram: (value) => value.trim().length < 2
+			name: (value) => (value.length < 2 ? 'Поле не должно быть пустым' : null),
+			telegram: (value) => {
+				if (value.length < 2) {
+					return 'Поле не должно быть пустым'
+				} else if (!/@/g.test(value)) {
+					return 'Укажите символ @ перед вашим ником'
+				}
+			}
 		}
 	})
 
@@ -35,23 +41,19 @@ export const WaitingList = () => {
 				_id: randomId()
 			})
 			form.reset()
-			showNotification(
-				'teal',
-				userData.name,
-			)
+			showNotification('teal', userData.name)
 		} catch (error) {
-			 if(isAxiosError(error)){
-   showNotification('red', 'Error', error?.message, false)
-				} 
-				else if( error instanceof Error){
-					showNotification('red', 'Error', error?.message, false)
-				}
+			if (isAxiosError(error)) {
+				showNotification('red', 'Error', error?.message, false)
+			} else if (error instanceof Error) {
+				showNotification('red', 'Error', error?.message, false)
+			}
 		}
 	})
 
 	return (
 		<>
-			<div id="contacts" className={classes.wrapper}>
+			<div id="waiting" className={classes.wrapper}>
 				<Container size="xs">
 					<Title
 						order={2}
@@ -59,17 +61,14 @@ export const WaitingList = () => {
 						sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}` })}
 						align="center"
 					>
-						Пробовать
+						Возьми под контроль хаос в своих знаниях!
 					</Title>
-					<Container size={640}>
-						<Text color="dimmed" size="md" className={classes.description}>
-							Возьми под контроль хаос в своих знаниях уже сегодня!
-						</Text>
-					</Container>
+					<Container size={640}></Container>
 					<form onSubmit={handleSubmit}>
 						<SimpleGrid cols={1} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 							<TextInput
 								data-autofocus
+								icon={<IconUser size={'1rem'} />}
 								label="Имя"
 								placeholder="Ваше имя"
 								name="name"
@@ -77,16 +76,19 @@ export const WaitingList = () => {
 								{...form.getInputProps('name')}
 							/>
 							<TextInput
-								label="Никнейм"
-								placeholder="Ваш никнейм в телеграм"
+								icon={<IconBrandTelegram size={'1rem'} />}
+								label="Телеграм"
+								placeholder="Ваш телеграм"
 								name="telegram"
 								variant="filled"
+								description="Введите ваш ник в телеграм в формате @nickname"
+								inputWrapperOrder={['label', 'error', 'input', 'description']}
 								{...form.getInputProps('telegram')}
 							/>
 						</SimpleGrid>
 						<Group position="center" mt="xl">
 							<Button type="submit" size="md">
-								Отправить
+								Пробовать
 							</Button>
 						</Group>
 					</form>
