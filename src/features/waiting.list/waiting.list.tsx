@@ -13,8 +13,10 @@ import api from 'src/app/services/api'
 import { showNotification } from 'src/shared/utils/showNotification'
 import { isAxiosError } from 'axios'
 import { IconBrandTelegram, IconUser } from '@tabler/icons-react'
+import { useState } from 'react'
 
 export const WaitingList = () => {
+		const [isDisable, setDisable] = useState(false)
 	const form = useForm({
 		initialValues: {
 			name: '',
@@ -35,6 +37,7 @@ export const WaitingList = () => {
 	const { classes } = useStyles()
 
 	const handleSubmit = form.onSubmit(async (userData) => {
+		setDisable(true)
 		try {
 			api.submitNicknameTelegram('user.json', {
 				...userData,
@@ -48,6 +51,8 @@ export const WaitingList = () => {
 			} else if (error instanceof Error) {
 				showNotification('red', 'Error', error?.message, false)
 			}
+		} finally {
+			setDisable(false)
 		}
 	})
 
@@ -87,7 +92,7 @@ export const WaitingList = () => {
 							/>
 						</SimpleGrid>
 						<Group position="center" mt="xl">
-							<Button type="submit" size="md">
+							<Button disabled={isDisable} type="submit" size="md">
 								Пробовать
 							</Button>
 						</Group>
