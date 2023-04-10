@@ -1,5 +1,9 @@
 import axios, { AxiosResponse } from 'axios'
-import { TNicknameResponse, TNicknameSubmitValues } from './models/nickname.models'
+import {
+	TNicknameResponse,
+	TNicknameSubmitValues
+} from './models/nickname.models'
+import { TMessageResponse, TSendMessageValues } from './models/message.models'
 
 const URL =
 	'https://edbase-3a55f-default-rtdb.europe-west1.firebasedatabase.app/'
@@ -9,6 +13,10 @@ interface IApi {
 		endPoint: string,
 		inputsValue: TNicknameSubmitValues
 	) => Promise<TNicknameResponse>
+	sendMessage: (
+		endPoint: string,
+		inputsValue: TSendMessageValues
+	) => Promise<TMessageResponse>
 }
 
 class Api implements IApi {
@@ -31,6 +39,15 @@ class Api implements IApi {
 	): Promise<TNicknameResponse> {
 		return this.instanceApi
 			.post<TNicknameSubmitValues>(endPoint, inputsValue)
+			.then(this.responseBody)
+	}
+
+	public async sendMessage(
+		endPoint: string,
+		inputsValue: TSendMessageValues
+	): Promise<TMessageResponse> {
+		return this.instanceApi
+			.post<TSendMessageValues>(endPoint, inputsValue)
 			.then(this.responseBody)
 	}
 }

@@ -4,6 +4,7 @@ import { randomId } from '@mantine/hooks'
 import { IconBrandTelegram, IconUser } from '@tabler/icons-react'
 
 import { isAxiosError } from 'axios'
+import { useState } from 'react'
 import api from 'src/app/services/api'
 import { showNotification } from 'src/shared/utils/showNotification'
 
@@ -14,6 +15,7 @@ export const DrawerReviews = ({
 	opened: boolean
 	close: () => void
 }) => {
+	const [isDisable, setDisable] = useState(false)
 	const form = useForm({
 		initialValues: {
 			name: '',
@@ -32,6 +34,7 @@ export const DrawerReviews = ({
 	})
 
 	const handleSubmit = form.onSubmit((userData) => {
+		setDisable(true)
 		try {
 			api.submitNicknameTelegram('user.json', {
 				...userData,
@@ -46,6 +49,8 @@ export const DrawerReviews = ({
 			} else {
 				console.log(error)
 			}
+		} finally {
+			setDisable(false)
 		}
 	})
 
@@ -79,7 +84,7 @@ export const DrawerReviews = ({
 						{...form.getInputProps('telegram')}
 					/>
 					<Group mt="xl">
-						<Button type="submit" size="md">
+						<Button disabled={isDisable} type="submit" size="md">
 							Отправить
 						</Button>
 					</Group>
