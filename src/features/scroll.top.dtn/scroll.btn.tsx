@@ -7,7 +7,7 @@ export  const  ScrollTopBtn = () =>  {
 	return (
 		<>
 			<Affix position={{ bottom: rem(30), right: rem(30) }}>
-				<Transition transition="slide-up" mounted={true}>
+				<Transition transition="slide-up" mounted={scroll.y > 0}>
 					{(transitionStyles) => (
 						<Button
 							radius="xl"

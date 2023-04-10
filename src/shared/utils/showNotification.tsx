@@ -12,11 +12,11 @@ export const showNotification = (
 		styles: (theme) => ({
 			root: {
 				backgroundColor:
-					theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[0]
+					theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
 			}
 		}),
 		color: color,
-		autoClose: true,
+		autoClose:true,
 		title: title,
 		message: message,
 		icon: isIcon && <IconCheck size="1rem" />

@@ -41,15 +41,15 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 		<footer className={classes.footer}>
 			<Container size="xl" className={classes.inner}>
 				<div className={classes.logo}>
-					<a href="#header">
-						<img src={logo} className={classes.logoIcon} alt="Vite logo" />
-					</a>
-					<Text size="xs" color="dimmed" className={classes.description}>
+					{/* <a href="#header">
+						<img src={logo} className={classes.logoIcon} alt="Ed-base logo" />
+					</a> */}
+					{/* <Text size="sm" color="dimmed" className={classes.description}>
 						Приложение в автоматическом режиме сохранит и структурирует материал
-						любого формата, создавая вашу персональную базу знаний.
-					</Text>
+						любого формата
+					</Text> */}
 				</div>
-				<div className={classes.groups}>{groups}</div>
+				{/* <div className={classes.groups}>{groups}</div> */}
 			</Container>
 			<Container className={classes.afterFooter}>
 				<Text color="dimmed" size="sm">
@@ -58,13 +58,13 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 
 				<Group spacing={0} className={classes.social} position="right" noWrap>
 					<ActionIcon size="lg">
-						<IconBrandTwitter size="1.05rem" stroke={1.5} />
+						<IconBrandTwitter  size="2rem" stroke={1.5} />
 					</ActionIcon>
 					<ActionIcon size="lg">
-						<IconBrandYoutube size="1.05rem" stroke={1.5} />
+						<IconBrandYoutube  size="2rem" stroke={1.5} />
 					</ActionIcon>
 					<ActionIcon size="lg">
-						<IconBrandInstagram size="1.05rem" stroke={1.5} />
+						<IconBrandInstagram size="2rem" stroke={1.5} />
 					</ActionIcon>
 				</Group>
 			</Container>

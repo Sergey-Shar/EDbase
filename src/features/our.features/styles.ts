@@ -5,7 +5,10 @@ export const useStyles = createStyles((theme) => ({
 		paddingTop: `calc(${theme.spacing.xl} * 3.5)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
 		backgroundColor:
-			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0]
+			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+		[theme.fn.smallerThan('md')]: {
+		 display: 'none'
+		}
 	},
 
 	title: {
