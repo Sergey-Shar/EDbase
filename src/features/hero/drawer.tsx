@@ -35,6 +35,8 @@ export const DrawerReviews = ({
 
 	const handleSubmit = form.onSubmit((userData) => {
 		setDisable(true)
+		//@ts-ignore
+		window.ym(93141352, 'reachGoal', 'submit')
 		try {
 			api.submitNicknameTelegram('user.json', {
 				...userData,

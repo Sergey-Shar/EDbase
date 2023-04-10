@@ -36,7 +36,9 @@ export const Contacts = () => {
 	const { classes } = useStyles()
 
 	const handleSubmit = formMessage.onSubmit(async (userData) => {
- setDisable(true)
+		setDisable(true)
+		//@ts-ignore
+		window.ym(93141352, 'reachGoal', 'submit')
 		try {
 			api.sendMessage('message.json', {
 				...userData,
@@ -54,9 +56,8 @@ export const Contacts = () => {
 			} else if (error instanceof Error) {
 				showNotification('red', 'Error', error?.message, false)
 			}
-		}
-		finally{
-  setDisable(false)
+		} finally {
+			setDisable(false)
 		}
 	})
 
