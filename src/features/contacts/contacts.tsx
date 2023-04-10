@@ -9,7 +9,7 @@ import {
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useStyles } from './styles'
-import { IconAt, IconUser, IconMessage2Check } from '@tabler/icons-react'
+import { IconAt, IconUser, IconMessage2Check, IconBallpen } from '@tabler/icons-react'
 import { randomId } from '@mantine/hooks'
 
 import { isAxiosError } from 'axios'
@@ -75,6 +75,7 @@ export const Contacts = () => {
 				<form onSubmit={handleSubmit}>
 					<SimpleGrid cols={2} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 						<TextInput
+							required
 							data-autofocus
 							icon={<IconUser size={'1rem'} />}
 							label="Имя"
@@ -84,6 +85,7 @@ export const Contacts = () => {
 							{...formMessage.getInputProps('name')}
 						/>
 						<TextInput
+							required
 							icon={<IconAt size="1rem" />}
 							label="Почта"
 							placeholder="Ваша почта"
@@ -93,6 +95,7 @@ export const Contacts = () => {
 						/>
 					</SimpleGrid>
 					<Textarea
+						required
 						mt="md"
 						label="Сообщение "
 						placeholder="Ваше сообщение "

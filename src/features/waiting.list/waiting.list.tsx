@@ -74,6 +74,7 @@ export const WaitingList = () => {
 					<form onSubmit={handleSubmit}>
 						<SimpleGrid cols={1} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 							<TextInput
+								required
 								data-autofocus
 								icon={<IconUser size={'1rem'} />}
 								label="Имя"
@@ -83,6 +84,7 @@ export const WaitingList = () => {
 								{...form.getInputProps('name')}
 							/>
 							<TextInput
+								required
 								icon={<IconBrandTelegram size={'1rem'} />}
 								label="Телеграм"
 								placeholder="Ваш телеграм"
