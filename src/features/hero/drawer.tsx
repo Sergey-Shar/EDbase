@@ -67,6 +67,7 @@ export const DrawerReviews = ({
 			>
 				<form onSubmit={handleSubmit}>
 					<TextInput
+						required
 						data-autofocus
 						icon={<IconUser size={'1rem'} />}
 						label="Имя"
@@ -76,6 +77,7 @@ export const DrawerReviews = ({
 						{...form.getInputProps('name')}
 					/>
 					<TextInput
+						required
 						icon={<IconBrandTelegram size={'1rem'} />}
 						label="Телеграм"
 						placeholder="Ваш телеграм"

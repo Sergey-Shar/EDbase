@@ -2,7 +2,8 @@ import { Text, Container, ActionIcon, Group } from '@mantine/core'
 import {
 	IconBrandTwitter,
 	IconBrandYoutube,
-	IconBrandInstagram
+	IconBrandInstagram,
+	IconBrandTelegram
 } from '@tabler/icons-react'
 import { useStyles } from './styles'
 import logo from '../../assets/images/logo.png'
@@ -53,19 +54,28 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 			</Container>
 			<Container className={classes.afterFooter}>
 				<Text color="dimmed" size="sm">
-					© 2023 Edbase
+					Copyright © 2023 Ed-Base All rights reserved.
 				</Text>
 
 				<Group spacing={0} className={classes.social} position="right" noWrap>
-					<ActionIcon size="lg">
-						<IconBrandTwitter  size="2rem" stroke={1.5} />
-					</ActionIcon>
-					<ActionIcon size="lg">
-						<IconBrandYoutube  size="2rem" stroke={1.5} />
-					</ActionIcon>
-					<ActionIcon size="lg">
-						<IconBrandInstagram size="2rem" stroke={1.5} />
-					</ActionIcon>
+					{/* <a href="#">
+						<ActionIcon size="lg">
+							<IconBrandTwitter size="2rem" stroke={1.5} />
+						</ActionIcon>
+					</a> */}
+					<a href="#">
+						<ActionIcon size="lg">
+							<IconBrandTelegram size="2rem" stroke={1.5} />
+						</ActionIcon>
+					</a>
+					<a
+						href="https://instagram.com/_edbase_startup?igshid=ZDdkNTZiNTM="
+						target="_blank"
+					>
+						<ActionIcon size="lg">
+							<IconBrandInstagram size="2rem" stroke={1.5} />
+						</ActionIcon>
+					</a>
 				</Group>
 			</Container>
 		</footer>

@@ -17,11 +17,11 @@ import {
 	rem,
 	Container,
 } from '@mantine/core'
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo2.png'
 import { useDisclosure } from '@mantine/hooks'
 import {IconChevronDown} from '@tabler/icons-react'
 import { useStyles } from './styles'
-import { MOCK_DATA, featureMenu } from './feature.data'
+import { featureMenu } from './feature.data'
 import { ButtonToggleTheme } from './toggle.theme'
 
 export const  AppHeader = () => {
