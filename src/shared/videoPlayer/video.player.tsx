@@ -9,13 +9,12 @@ import {
 	VolumeMenuButton,
 	BigPlayButton
 } from 'video-react'
-
-const SOURCE_VIDEO = 'http://85.209.2.173/storage/video/edbase.mp4'
+import video from '../../assets/videos/video.mp4'
 
 export const VideoPlayer = () => {
 	return (
 		<Player>
-			<source src={SOURCE_VIDEO} />
+			<source src={video} />
 			<BigPlayButton position="center" />
 			<ControlBar>
 				<ReplayControl seconds={10} />
