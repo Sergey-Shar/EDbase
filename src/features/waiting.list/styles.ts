@@ -4,7 +4,7 @@ export const useStyles = createStyles((theme) => ({
 	wrapper: {
 		paddingTop: `calc(${theme.spacing.xl} * 4)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
-		minHeight: 550,
+		minHeight: 350,
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
 		[theme.fn.smallerThan('md')]: {
