@@ -18,10 +18,12 @@ import { VideoModal } from './video.modal'
 import { DrawerReviews } from './drawer'
 
 export const HeroContent = () => {
-		const [openedModal, { open:openModal, close:closeModal }] = useDisclosure(false)
-	 const [openedDrawer, { open: openDrawer, close: closeDrawer }] = useDisclosure(false)
-	
-		const { classes } = useStyles()
+	const [openedModal, { open: openModal, close: closeModal }] =
+		useDisclosure(false)
+	const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
+		useDisclosure(false)
+
+	const { classes } = useStyles()
 	return (
 		<>
 			<VideoModal opened={openedModal} close={closeModal} />
@@ -34,11 +36,16 @@ export const HeroContent = () => {
 								Сохраняй, систематизируй
 								<br /> свои знания в одном месте.
 							</Title>
-							<Text color="dimmed" mt="md">
+							<Text className={classes.textDesktop} color="dimmed" mt="md">
 								Приложение в автоматическом режиме сохранит и структурирует материал
-								любого формата, создавая вашу персональную базу знаний. Визуальное
-								представление майндмэпа позволит вам быстро находить нужную информацию и
-								видеть связи между знаниями.
+								любого формата, создавая вашу персональную базу знаний.
+								<br /> Визуальное представление в виде майндмэпа позволит вам быстро
+								находить нужную информацию и видеть связи между знаниями.
+							</Text>
+							<Text className={classes.textMobile} color="dimmed" mt="md">
+								Приложение автоматически сохраняет и структурирует только важное из
+								книг, статей, курсов. Визуализирует ваши знания в виде майндмэпа и
+								упрощает поиск нужной информации.
 							</Text>
 							<List
 								mt={30}
@@ -51,15 +58,23 @@ export const HeroContent = () => {
 								}
 							>
 								<List.Item>
-									<b>Конспект – </b> автоматическая обработка исходного материала,
-									вычленение только важной информации.
+									<b>Конспект</b>{' '}
+									<span className={classes.listItemHiddenMobile}>
+										– автоматическая обработка исходного материала, вычленение только
+										важной информации.
+									</span>
 								</List.Item>
 								<List.Item>
-									<b>Визуализация – </b>автоматическая систематизация информации в виде
-									майндмэпа.
+									<b>Визуализация</b>
+									<span className={classes.listItemHiddenMobile}>
+										– автоматическая систематизация информации в виде майндмэпа.
+									</span>
 								</List.Item>
 								<List.Item>
-									<b>Простая навигация – </b> легкость поиска необходимой информации.
+									<b>Простая навигация</b>
+									<span className={classes.listItemHiddenMobile}>
+										– легкость поиска необходимой информации.
+									</span>
 								</List.Item>
 							</List>
 

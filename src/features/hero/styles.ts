@@ -8,7 +8,7 @@ export const useStyles = createStyles((theme) => ({
 	inner: {
 		display: 'flex',
 		justifyContent: 'space-between',
-		paddingTop: `calc(${theme.spacing.xl} * 4)`,
+		paddingTop: `calc(${theme.spacing.xl} * 4.5)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 4)`
 	},
 
@@ -31,6 +31,24 @@ export const useStyles = createStyles((theme) => ({
 
 		[theme.fn.smallerThan('xs')]: {
 			fontSize: rem(28)
+		}
+	},
+
+	textDesktop: {
+		[theme.fn.smallerThan('md')]: {
+			display: 'none'
+		}
+	},
+	textMobile: {
+		display: 'none',
+		[theme.fn.smallerThan('md')]: {
+			display: 'block'
+		}
+	},
+
+	listItemHiddenMobile: {
+		[theme.fn.smallerThan('md')]: {
+			display: 'none'
 		}
 	},
 
