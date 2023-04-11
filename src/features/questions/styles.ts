@@ -21,9 +21,19 @@ export const useStyles = createStyles((theme) => ({
 		borderRadius: theme.radius.md,
 		marginBottom: theme.spacing.lg,
 		border: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[0]
+			theme.colorScheme === 'dark' ? theme.colors.dark[4] : 'none'
 		}`,
+		[theme.fn.smallerThan('md')]: {
+			border: `${rem(1)} solid ${
+				theme.colorScheme === 'dark' ? theme.colors.dark[8] : 'none'
+			}`
+		},
 		backgroundColor:
-			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[1]
+			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[1],
+
+		[theme.fn.smallerThan('md')]: {
+			backgroundColor:
+				theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[3]
+		}
 	}
 }))
