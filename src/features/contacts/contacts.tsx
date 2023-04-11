@@ -9,7 +9,7 @@ import {
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useStyles } from './styles'
-import { IconAt, IconUser, IconMessage2Check, IconBallpen } from '@tabler/icons-react'
+import { IconAt, IconUser } from '@tabler/icons-react'
 import { randomId } from '@mantine/hooks'
 
 import { isAxiosError } from 'axios'
@@ -18,7 +18,7 @@ import api from 'src/app/services/api'
 import { useState } from 'react'
 
 export const Contacts = () => {
-	const [isDisable, setDisable ] = useState(false)
+	const [isDisable, setDisable] = useState(false)
 	const formMessage = useForm({
 		initialValues: {
 			name: '',
@@ -26,10 +26,8 @@ export const Contacts = () => {
 			message: ''
 		},
 		validate: {
-			name: (value) => value.length < 2 ? 'Поле не должно быть пустым' : null,
 			email: (value) =>
-				!/^\S+@\S+$/.test(value) ? 'Email введен не корректно' : null,
-
+				!/^\S+@\S+$/.test(value) ? 'Email введен не корректно' : null
 		}
 	})
 
@@ -72,10 +70,9 @@ export const Contacts = () => {
 				>
 					Связаться
 				</Title>
-				<form onSubmit={handleSubmit}>
+				<form noValidate onSubmit={handleSubmit}>
 					<SimpleGrid cols={2} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 						<TextInput
-							required
 							data-autofocus
 							icon={<IconUser size={'1rem'} />}
 							label="Имя"

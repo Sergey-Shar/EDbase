@@ -40,7 +40,6 @@ export const HeroContent = () => {
 								представление майндмэпа позволит вам быстро находить нужную информацию и
 								видеть связи между знаниями.
 							</Text>
-
 							<List
 								mt={30}
 								spacing="sm"
@@ -65,14 +64,20 @@ export const HeroContent = () => {
 							</List>
 
 							<Group mt={30}>
-								<Button
-									onClick={openDrawer}
-									radius="xl"
-									size="md"
-									className={classes.control}
+								<a
+									href="https://t.me/EdBase_bot"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
-									Пробовать
-								</Button>
+									<Button
+										//onClick={openDrawer}
+										radius="xl"
+										size="md"
+										className={classes.control}
+									>
+										Пробовать
+									</Button>
+								</a>
 								<Button
 									variant="default"
 									radius="xl"
