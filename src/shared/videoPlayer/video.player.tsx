@@ -13,7 +13,7 @@ import video from '../../assets/videos/video.mp4'
 
 export const VideoPlayer = () => {
 	return (
-		<Player>
+		<Player preload="none">
 			<source src={video} />
 			<BigPlayButton position="center" />
 			<ControlBar>
