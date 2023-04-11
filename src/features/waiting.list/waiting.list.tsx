@@ -16,47 +16,47 @@ import { IconBrandTelegram, IconUser } from '@tabler/icons-react'
 import { useState } from 'react'
 
 export const WaitingList = () => {
-		const [isDisable, setDisable] = useState(false)
-	const form = useForm({
-		initialValues: {
-			name: '',
-			telegram: ''
-		},
-		validate: {
-			name: (value) => (value.length < 2 ? 'Поле не должно быть пустым' : null),
-			telegram: (value) => {
-				if (value.length < 2) {
-					return 'Поле не должно быть пустым'
-				} else if (!/@/g.test(value)) {
-					return 'Укажите символ @ перед вашим ником'
-				}
-			}
-		}
-	})
+		//const [isDisable, setDisable] = useState(false)
+	// const form = useForm({
+	// 	initialValues: {
+	// 		name: '',
+	// 		telegram: ''
+	// 	},
+	// 	validate: {
+	// 		name: (value) => (value.length < 2 ? 'Поле не должно быть пустым' : null),
+	// 		telegram: (value) => {
+	// 			if (value.length < 2) {
+	// 				return 'Поле не должно быть пустым'
+	// 			} else if (!/@/g.test(value)) {
+	// 				return 'Укажите символ @ перед вашим ником'
+	// 			}
+	// 		}
+	// 	}
+	// })
 
 	const { classes } = useStyles()
 
-	const handleSubmit = form.onSubmit(async (userData) => {
-		setDisable(true)
-		//@ts-ignore
-		window.ym(93141352, 'reachGoal', 'submit')
-		try {
-			api.submitNicknameTelegram('user.json', {
-				...userData,
-				_id: randomId()
-			})
-			form.reset()
-			showNotification('teal', userData.name)
-		} catch (error) {
-			if (isAxiosError(error)) {
-				showNotification('red', 'Error', error?.message, false)
-			} else if (error instanceof Error) {
-				showNotification('red', 'Error', error?.message, false)
-			}
-		} finally {
-			setDisable(false)
-		}
-	})
+	// const handleSubmit = form.onSubmit(async (userData) => {
+	// 	setDisable(true)
+	// 	//@ts-ignore
+	// 	window.ym(93141352, 'reachGoal', 'submit')
+	// 	try {
+	// 		api.submitNicknameTelegram('user.json', {
+	// 			...userData,
+	// 			_id: randomId()
+	// 		})
+	// 		form.reset()
+	// 		showNotification('teal', userData.name)
+	// 	} catch (error) {
+	// 		if (isAxiosError(error)) {
+	// 			showNotification('red', 'Error', error?.message, false)
+	// 		} else if (error instanceof Error) {
+	// 			showNotification('red', 'Error', error?.message, false)
+	// 		}
+	// 	} finally {
+	// 		setDisable(false)
+	// 	}
+	// })
 
 	return (
 		<>
@@ -71,7 +71,7 @@ export const WaitingList = () => {
 						Возьми под контроль хаос в своих знаниях!
 					</Title>
 					<Container size={640}></Container>
-					<form onSubmit={handleSubmit}>
+					{/* <form onSubmit={handleSubmit}>
 						<SimpleGrid cols={1} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 							<TextInput
 								required
@@ -95,12 +95,18 @@ export const WaitingList = () => {
 								{...form.getInputProps('telegram')}
 							/>
 						</SimpleGrid>
-						<Group position="center" mt="xl">
-							<Button disabled={isDisable} type="submit" size="md">
+					</form> */}
+					<Group position="center" mt="xl">
+						<a
+							href="https://t.me/EdBase_bot"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Button type="button" size="md">
 								Пробовать
 							</Button>
-						</Group>
-					</form>
+						</a>
+					</Group>
 				</Container>
 			</div>
 		</>

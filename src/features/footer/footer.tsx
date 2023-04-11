@@ -63,7 +63,11 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 							<IconBrandTwitter size="2rem" stroke={1.5} />
 						</ActionIcon>
 					</a> */}
-					<a href="#">
+					<a
+						href="https://t.me/+YgT6lPQgcek0Y2Qy"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
 						<ActionIcon size="lg">
 							<IconBrandTelegram size="2rem" stroke={1.5} />
 						</ActionIcon>
@@ -71,6 +75,7 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 					<a
 						href="https://instagram.com/_edbase_startup?igshid=ZDdkNTZiNTM="
 						target="_blank"
+						rel="noopener noreferrer"
 					>
 						<ActionIcon size="lg">
 							<IconBrandInstagram size="2rem" stroke={1.5} />
