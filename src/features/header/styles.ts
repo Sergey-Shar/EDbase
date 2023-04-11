@@ -8,7 +8,10 @@ export const useStyles = createStyles((theme) => ({
 		}
 	},
 	header: {
-		position: 'fixed'
+		borderBottom: `1px solid ${
+			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0]
+		}`,
+		position: 'fixed',
 	},
 	logo: {
 		width: '2.5rem',
