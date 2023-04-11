@@ -47,5 +47,8 @@ export const useStyles = createStyles((theme) => ({
 		lineHeight: 1,
 		marginBottom: theme.spacing.xl,
 		marginTop: theme.spacing.md
-	}
+	},
+text:{
+	// lineHeight:'2rem'
+}
 }))
