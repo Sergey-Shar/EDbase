@@ -16,28 +16,28 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 		lang: 'ru',
 		icons: [
 			{
-				src: './icons/icon192.png',
+				src: './public/icons/icon192.png',
 				type: 'image/png',
 				sizes: '192x192',
 				purpose: 'monochrome'
 			},
 			{
-				src: './icons/icon512.png',
+				src: './public/icons/icon512.png',
 				type: 'image/png',
 				sizes: '512x512',
 				purpose: 'monochrome'
 			},
 			{
-				src: './icons/icon180.png',
+				src: './public/icons/icon180.png',
 				type: 'image/png',
 				sizes: '180x180',
 				purpose: 'any'
 			},
 			{
-				src: './icons/icon225.png',
+				src: './public/icons/icon225.png',
 				type: 'image/png',
 				sizes: '225x225',
-				purpose: 'maskable'
+				purpose: 'any maskable'
 			}
 		]
 	}
