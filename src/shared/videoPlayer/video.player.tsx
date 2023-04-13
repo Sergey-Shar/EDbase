@@ -15,7 +15,7 @@ export const VideoPlayer = () => {
 	return (
 		<Player preload="none">
 			<source src={video} />
-			<BigPlayButton position="center" />
+			<BigPlayButton aria-label="включить видео" position="center" />
 			<ControlBar>
 				<ReplayControl seconds={10} />
 				<ForwardControl seconds={30} />

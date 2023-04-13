@@ -58,26 +58,23 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 				</Text>
 
 				<Group spacing={0} className={classes.social} position="right" noWrap>
-					{/* <a href="#">
-						<ActionIcon size="lg">
-							<IconBrandTwitter size="2rem" stroke={1.5} />
-						</ActionIcon>
-					</a> */}
 					<a
+						aria-label="перейти в телеграм канал"
 						href="https://t.me/+YgT6lPQgcek0Y2Qy"
 						rel="noopener noreferrer"
 						target="_blank"
 					>
-						<ActionIcon size="lg">
+						<ActionIcon aria-label="перейти в телеграм канал" size="lg">
 							<IconBrandTelegram size="2rem" stroke={1.5} />
 						</ActionIcon>
 					</a>
 					<a
+						aria-label="перейти в инстаграм"
 						href="https://instagram.com/_edbase_startup?igshid=ZDdkNTZiNTM="
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<ActionIcon size="lg">
+						<ActionIcon aria-label="перейти в инстаграм" size="lg">
 							<IconBrandInstagram size="2rem" stroke={1.5} />
 						</ActionIcon>
 					</a>
