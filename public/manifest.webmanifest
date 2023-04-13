@@ -30,7 +30,7 @@
 			"src": "./icons/icon225.png",
 			"type": "image/png",
 			"sizes": "225x225",
-			"purpose": "maskable"
+			"purpose": "any maskable"
 		}
 	]
 }
