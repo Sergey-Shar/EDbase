@@ -25,7 +25,7 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 				src: './public/icons/icon512.png',
 				type: 'image/png',
 				sizes: '512x512',
-				purpose: 'monochrome'
+				purpose: 'any'
 			},
 			{
 				src: './public/icons/icon180.png',
@@ -34,10 +34,10 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 				purpose: 'any'
 			},
 			{
-				src: './public/icons/icon225.png',
+				src: './public/icons/maskable_icon.png',
 				type: 'image/png',
-				sizes: '225x225',
-				purpose: 'any maskable'
+				sizes: '384x384',
+				purpose: 'maskable'
 			}
 		]
 	}
@@ -46,6 +46,7 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 // https://vitejs.dev/config/
 
 export default defineConfig({
+	base: './',
 	plugins: [react(), VitePWA(manifestPlugin)],
 	resolve: {
 		alias: {
