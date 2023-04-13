@@ -9,26 +9,22 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 	manifest: {
 		name: 'Ed base',
 		short_name: 'EdBase',
-		start_url: '/index.html',
-		display: 'standalone',
-		background_color: '#000',
-		theme_color: '#171717',
 		lang: 'ru',
 		icons: [
 			{
-				src: './public/icons/icon192.png',
+				src: './public/icons/icon192x192.png',
 				type: 'image/png',
 				sizes: '192x192',
 				purpose: 'monochrome'
 			},
 			{
-				src: './public/icons/icon512.png',
+				src: './public/icons/icon512x512.png',
 				type: 'image/png',
 				sizes: '512x512',
 				purpose: 'any'
 			},
 			{
-				src: './public/icons/icon180.png',
+				src: './public/icons/icon180x180.png',
 				type: 'image/png',
 				sizes: '180x180',
 				purpose: 'any'
@@ -39,7 +35,12 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 				sizes: '384x384',
 				purpose: 'maskable'
 			}
-		]
+		],
+		theme_color: '#171717',
+		background_color: '#e8ebf2',
+		display: 'standalone',
+		scope: '/',
+		start_url: '/'
 	}
 }
 
