@@ -2,14 +2,14 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
 
+
 const manifestPlugin: Partial<VitePWAOptions> = {
 	registerType: 'prompt',
 	includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
 	manifest: {
 		name: 'Ed base',
 		short_name: 'EdBase',
-		start_url: '/',
-		scope: '/',
+		start_url: '/index.html',
 		display: 'standalone',
 		background_color: '#000',
 		theme_color: '#171717',
@@ -46,7 +46,6 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 // https://vitejs.dev/config/
 
 export default defineConfig({
-	base: './',
 	plugins: [react(), VitePWA(manifestPlugin)],
 	resolve: {
 		alias: {
