@@ -104,10 +104,11 @@ export const  AppHeader = () => {
 							</a>
 						</Group>
 						<Group className={classes.hiddenMobile}>
-							<ButtonToggleTheme />
+							<ButtonToggleTheme aria-label="переключатель темы сайта" />
 						</Group>
 
 						<Burger
+							aria-label="меню бургер"
 							opened={drawerOpened}
 							onClick={toggleDrawer}
 							className={classes.hiddenDesktop}
