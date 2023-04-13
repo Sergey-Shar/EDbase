@@ -25,7 +25,7 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 				src: './icons/icon512.png',
 				type: 'image/png',
 				sizes: '512x512',
-				purpose: 'any'
+				purpose: 'monochrome'
 			},
 			{
 				src: './icons/icon180.png',
