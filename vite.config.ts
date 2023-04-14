@@ -5,34 +5,34 @@ import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
 
 const manifestPlugin: Partial<VitePWAOptions> = {
 	registerType: 'prompt',
-	includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+	includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.png'],
 	manifest: {
 		name: 'Ed base',
 		short_name: 'EdBase',
 		lang: 'ru',
 		icons: [
 			{
-				src: './public/icons/icon192x192.png',
+				src: 'icon192x192.png',
 				type: 'image/png',
 				sizes: '192x192',
 				purpose: 'monochrome'
 			},
 			{
-				src: './public/icons/icon512x512.png',
+				src: 'icon512x512.png',
 				type: 'image/png',
 				sizes: '512x512',
 				purpose: 'any'
 			},
 			{
-				src: './public/icons/icon180x180.png',
+				src: 'icon180x180.png',
 				type: 'image/png',
 				sizes: '180x180',
 				purpose: 'any'
 			},
 			{
-				src: './public/icons/maskable_icon.png',
+				src: 'maskable_icon.png',
 				type: 'image/png',
-				sizes: '384x384',
+				sizes: '192x192',
 				purpose: 'maskable'
 			}
 		],
@@ -40,7 +40,7 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 		background_color: '#e8ebf2',
 		display: 'standalone',
 		scope: '/',
-		start_url: '/'
+		start_url: '/src'
 	}
 }
 
