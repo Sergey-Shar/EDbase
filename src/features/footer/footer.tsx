@@ -1,9 +1,8 @@
 import { Text, Container, ActionIcon, Group } from '@mantine/core'
 import {
-	IconBrandTwitter,
-	IconBrandYoutube,
 	IconBrandInstagram,
-	IconBrandTelegram
+	IconBrandTelegram,
+	IconBrandLinkedin
 } from '@tabler/icons-react'
 import { useStyles } from './styles'
 import logo from '../../assets/images/logo.png'
@@ -59,6 +58,16 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 
 				<Group spacing={0} className={classes.social} position="right" noWrap>
 					<a
+						aria-label="перейти в LinkedIn"
+						href="https://www.linkedin.com/company/92815291/admin/?feedType=following"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<ActionIcon aria-label="перейти в LinkedIn" size="lg">
+							<IconBrandLinkedin size="2rem" stroke={1.5} />
+						</ActionIcon>
+					</a>
+					<a
 						aria-label="перейти в телеграм канал"
 						href="https://t.me/+YgT6lPQgcek0Y2Qy"
 						rel="noopener noreferrer"
@@ -69,12 +78,12 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 						</ActionIcon>
 					</a>
 					<a
-						aria-label="перейти в инстаграм"
+						aria-label="перейти в Instagram"
 						href="https://instagram.com/_edbase_startup?igshid=ZDdkNTZiNTM="
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<ActionIcon aria-label="перейти в инстаграм" size="lg">
+						<ActionIcon aria-label="перейти в Instagram" size="lg">
 							<IconBrandInstagram size="2rem" stroke={1.5} />
 						</ActionIcon>
 					</a>

@@ -6,9 +6,6 @@ export const useStyles = createStyles((theme) => ({
 		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-		[theme.fn.smallerThan('md')]: {
-		 display: 'none'
-		}
 	},
 
 	title: {
@@ -27,6 +24,22 @@ export const useStyles = createStyles((theme) => ({
 
 		[theme.fn.smallerThan('sm')]: {
 			textAlign: 'left'
+		}
+	},
+	card: {
+		border: `${rem(1)} solid ${
+			theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1]
+		}`
+	},
+
+	cardTitle: {
+		'&::after': {
+			content: '""',
+			display: 'block',
+			backgroundColor: theme.fn.primaryColor(),
+			width: rem(45),
+			height: rem(2),
+			marginTop: theme.spacing.sm
 		}
 	}
 }))

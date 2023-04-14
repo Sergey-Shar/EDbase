@@ -1,1 +1,1 @@
-export { FeaturesGrid } from './features'
+export { FeaturesGrid } from './features.grid'

@@ -104,7 +104,7 @@ export const HeroContent = () => {
 								</Button>
 							</Group>
 						</div>
-						<Image src={heroImage} className={classes.image} />
+						<Image src={heroImage} className={classes.image} alt='Девушка в позе лотоса' />
 					</div>
 				</Container>
 			</div>

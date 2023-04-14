@@ -24,7 +24,11 @@ export const About = () => {
 							различных форматах.
 						</Text>
 					</div>
-					<Image src={aboutImage} className={classes.image} />
+					<Image
+						src={aboutImage}
+						className={classes.image}
+						alt="Команда за обсуждением проекта"
+					/>
 				</div>
 			</Container>
 		</div>

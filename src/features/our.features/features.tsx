@@ -1,67 +1,29 @@
 import {
-	ThemeIcon,
 	Text,
-	Title,
-	Container,
-	SimpleGrid,
+	Card,
+	rem,
 } from '@mantine/core'
 import React from 'react';
-import { MOCKDATA } from './mock.data';
 import { useStyles } from './styles';
 
 
-interface FeatureProps {
+export interface FeatureProps {
 	icon: React.FC<any>;
 	title: React.ReactNode;
 	description: React.ReactNode;
 }
 
-const Feature = ({ icon: Icon, title, description }: FeatureProps) => {
+export const Feature = ({ icon:Icon, title, description }: FeatureProps) => {
+		const { classes, theme } = useStyles()
 	return (
-		<div>
-			<ThemeIcon variant="light" size={40} radius={40}>
-				<Icon size="1.1rem" stroke={1.5} />
-			</ThemeIcon>
-			<Text mt="sm" mb={7}>
+		<Card shadow="md" radius="md" className={classes.card} padding="xl">
+				<Icon size={rem(50)} stroke={2} color={theme.fn.primaryColor()} />
+			<Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
 				{title}
 			</Text>
-			<Text size="sm" color="dimmed" sx={{ lineHeight: 1.6 }}>
+			<Text fz="sm" c="dimmed" mt="sm">
 				{description}
 			</Text>
-		</div>
-	)
-}
-
-interface FeaturesGridProps {
-	title: React.ReactNode;
-	data?: FeatureProps[];
-}
-
-export const  FeaturesGrid = ({
-	title,
-	data = MOCKDATA
-}: FeaturesGridProps) => {
-	const { classes } = useStyles()
-	const features = data.map((feature, index) => (
-		<Feature {...feature} key={index} />
-	))
-
-	return (
-		<div className={classes.wrapper}>
-			<Container id="features" size="xl">
-				<Title className={classes.title}>{title}</Title>
-				<SimpleGrid
-					mt={60}
-					cols={3}
-					spacing={50}
-					breakpoints={[
-						{ maxWidth: 980, cols: 2, spacing: 'xl' },
-						{ maxWidth: 755, cols: 1, spacing: 'xl' }
-					]}
-				>
-					{features}
-				</SimpleGrid>
-			</Container>
-		</div>
+		</Card>
 	)
 }
