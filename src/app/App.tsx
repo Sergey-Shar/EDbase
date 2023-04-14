@@ -4,6 +4,7 @@ import { MainPage } from '../pages'
 
 import './index.css'
 import { Notifications } from '@mantine/notifications'
+import { useEffect } from 'react'
 
 export const App = () => {
 const value = useTheme()

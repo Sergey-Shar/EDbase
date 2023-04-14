@@ -1,0 +1,46 @@
+{
+  "packageId": "app.vercel.e_dbase.twa",
+  "host": "e-dbase.vercel.app",
+  "name": "Ed base",
+  "launcherName": "EdBase",
+  "display": "standalone",
+  "themeColor": "#171717",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#E8EBF2",
+  "enableNotifications": true,
+  "startUrl": "/src",
+  "iconUrl": "https://e-dbase.vercel.app/icon512x512.png",
+  "monochromeIconUrl": "https://e-dbase.vercel.app/icon192x192.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "/Users/sergejsaruha/Desktop/EdBase/android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://e-dbase.vercel.app/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {
+    "playBilling": {
+      "enabled": true
+    }
+  },
+  "alphaDependencies": {
+    "enabled": true
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://e-dbase.vercel.app/",
+  "minSdkVersion": 19,
+  "orientation": "default",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "1"
+}
