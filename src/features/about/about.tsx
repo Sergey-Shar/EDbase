@@ -10,7 +10,7 @@ export const About = () => {
 				<div className={classes.body}>
 					<div className={classes.content}>
 						<Title className={classes.title}>Наша команда</Title>
-						<Text  c="dimmed">
+						<Text c="dimmed">
 							Команда EdBase - это 11 энтузиастов, объединенных одной идеей. <br /> При
 							проведении исследований, мы заметили, что многие люди, которые обучаются
 							или занимаются саморазвитием, сталкиваются с трудностями при работе с
@@ -25,9 +25,11 @@ export const About = () => {
 						</Text>
 					</div>
 					<Image
+						role="presentation"
+						aria-hidden="true"
+						alt=""
 						src={aboutImage}
 						className={classes.image}
-						alt="Команда за обсуждением проекта"
 					/>
 				</div>
 			</Container>
