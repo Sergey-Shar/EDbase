@@ -5,11 +5,12 @@ export const useStyles = createStyles((theme) => ({
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.white
 	},
+
 	inner: {
 		display: 'flex',
 		justifyContent: 'space-between',
-		paddingTop: `calc(${theme.spacing.xl} * 4.5)`,
-		paddingBottom: `calc(${theme.spacing.xl} * 4)`
+		paddingTop: `calc(${theme.spacing.xl} * 3)`,
+		paddingBottom: `calc(${theme.spacing.xl} * 3)`
 	},
 
 	content: {
@@ -30,7 +31,8 @@ export const useStyles = createStyles((theme) => ({
 		fontWeight: 900,
 
 		[theme.fn.smallerThan('xs')]: {
-			fontSize: rem(28)
+			fontSize: rem(28),
+			textAlign: 'center'
 		}
 	},
 
@@ -39,10 +41,12 @@ export const useStyles = createStyles((theme) => ({
 			display: 'none'
 		}
 	},
+
 	textMobile: {
 		display: 'none',
 		[theme.fn.smallerThan('md')]: {
-			display: 'block'
+			display: 'block',
+			textAlign: 'center'
 		}
 	},
 
@@ -52,17 +56,38 @@ export const useStyles = createStyles((theme) => ({
 		}
 	},
 
-	control: {
+	controlGroup: {
 		[theme.fn.smallerThan('xs')]: {
-			flex: 1
+			display: 'flex',
+			justifyContent: 'center'
+		}
+	},
+	controlLeft: {
+		backgroundColor: '#FFD200',
+		color:theme.black,
+		border: 0,
+		'&:not([data-disabled])': theme.fn.hover({
+			backgroundColor: theme.fn.darken('#FFD200', 0.03)
+		}),
+		[theme.fn.smallerThan('xs')]: {
+			flex: 1,
+			paddingLeft: `${rem(45)}`,
+			paddingRight: `${rem(45)}`
+		}
+	},
+
+	controlRight: {
+		[theme.fn.smallerThan('xs')]: {
+			flex: 1,
+			display: 'none'
 		}
 	},
 
 	image: {
 		flex: 1,
-
-		[theme.fn.smallerThan('md')]: {
-			display: 'none'
+		[theme.fn.smallerThan('sm')]: {
+			maxWidth: '100%',
+			marginBottom: `calc(${theme.spacing.xl} * 1)`
 		}
 	},
 
@@ -75,5 +100,17 @@ export const useStyles = createStyles((theme) => ({
 		borderRadius: theme.radius.sm,
 		padding: `${rem(4)} ${rem(5)}`,
 		marginRight: `${rem(5)}`
+	},
+
+	body: {
+		display: 'flex',
+		justifyContent: 'space-between',
+		paddingTop: `calc(${theme.spacing.xl} * 2)`,
+		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
+
+		[theme.fn.smallerThan('sm')]: {
+			flexDirection: 'column-reverse',
+			paddingRight: 0
+		}
 	}
 }))

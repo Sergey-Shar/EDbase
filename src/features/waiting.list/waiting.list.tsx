@@ -102,7 +102,7 @@ export const WaitingList = () => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<Button type="button" size="md">
+							<Button className={classes.button} type="button" size="md">
 								Пробовать
 							</Button>
 						</a>

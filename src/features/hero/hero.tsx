@@ -18,19 +18,18 @@ import { VideoModal } from './video.modal'
 import { DrawerReviews } from './drawer'
 
 export const HeroContent = () => {
+	const { classes } = useStyles()
 	const [openedModal, { open: openModal, close: closeModal }] =
 		useDisclosure(false)
 	const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
 		useDisclosure(false)
-
-	const { classes } = useStyles()
 	return (
 		<>
 			<VideoModal opened={openedModal} close={closeModal} />
 			<DrawerReviews opened={openedDrawer} close={closeDrawer} />
-			<div className={classes.wrapper}>
+			<div id="about" className={classes.wrapper}>
 				<Container size="xl">
-					<div className={classes.inner}>
+					<div className={classes.body}>
 						<div className={classes.content}>
 							<Title className={classes.title}>
 								Сохраняй, систематизируй
@@ -52,43 +51,42 @@ export const HeroContent = () => {
 								spacing="sm"
 								size="sm"
 								icon={
-									<ThemeIcon size={20} radius="xl">
-										<IconCheck size={rem(12)} stroke={1.5} />
+									<ThemeIcon color="#FFD200" size={20} radius="xl">
+										<IconCheck color="#000" size={rem(13)} stroke={1.9} />
 									</ThemeIcon>
 								}
 							>
-								<List.Item>
+								<List.Item className={classes.listItemHiddenMobile}>
 									<b>Конспект</b>{' '}
-									<span className={classes.listItemHiddenMobile}>
+									<span>
 										– автоматическая обработка исходного материала, вычленение только
 										важной информации.
 									</span>
 								</List.Item>
-								<List.Item>
+								<List.Item className={classes.listItemHiddenMobile}>
 									<b>Визуализация</b>
-									<span className={classes.listItemHiddenMobile}>
+									<span>
 										– автоматическая систематизация информации в виде майндмэпа.
 									</span>
 								</List.Item>
-								<List.Item>
+								<List.Item className={classes.listItemHiddenMobile}>
 									<b>Простая навигация</b>
-									<span className={classes.listItemHiddenMobile}>
-										– легкость поиска необходимой информации.
-									</span>
+									<span>– легкость поиска необходимой информации.</span>
 								</List.Item>
 							</List>
 
-							<Group mt={30}>
+							<Group className={classes.controlGroup} mt={30}>
 								<a
 									href="https://t.me/EdBase_bot"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
 									<Button
+										variant="default"
 										//onClick={openDrawer}
 										radius="xl"
 										size="md"
-										className={classes.control}
+										className={classes.controlLeft}
 									>
 										Пробовать
 									</Button>
@@ -97,14 +95,17 @@ export const HeroContent = () => {
 									variant="default"
 									radius="xl"
 									size="md"
-									className={classes.control}
-									onClick={openModal}
+									className={classes.controlRight}
 								>
 									Как это работает?
 								</Button>
 							</Group>
 						</div>
-						<Image src={heroImage} className={classes.image} alt='Девушка в позе лотоса' />
+						<Image
+							src={heroImage}
+							className={classes.image}
+							alt="Девушка в позе лотоса"
+						/>
 					</div>
 				</Container>
 			</div>

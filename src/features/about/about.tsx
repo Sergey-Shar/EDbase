@@ -10,7 +10,7 @@ export const About = () => {
 				<div className={classes.body}>
 					<div className={classes.content}>
 						<Title className={classes.title}>Наша команда</Title>
-						<Text className={classes.text} c="dimmed">
+						<Text  c="dimmed">
 							Команда EdBase - это 11 энтузиастов, объединенных одной идеей. <br /> При
 							проведении исследований, мы заметили, что многие люди, которые обучаются
 							или занимаются саморазвитием, сталкиваются с трудностями при работе с

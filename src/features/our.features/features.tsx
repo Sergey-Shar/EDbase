@@ -17,7 +17,7 @@ export const Feature = ({ icon:Icon, title, description }: FeatureProps) => {
 		const { classes, theme } = useStyles()
 	return (
 		<Card shadow="md" radius="md" className={classes.card} padding="xl">
-				<Icon size={rem(50)} stroke={2} color={theme.fn.primaryColor()} />
+			<Icon size={rem(50)} stroke={1} color="#FFD200" />
 			<Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
 				{title}
 			</Text>

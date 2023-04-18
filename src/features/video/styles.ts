@@ -2,15 +2,15 @@ import { createStyles, rem } from "@mantine/core";
 
 export const useStyles = createStyles((theme) => ({
 	wrapper: {
-		paddingTop: `calc(${theme.spacing.xl} * 4)`,
-		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
+		paddingTop: `calc(${theme.spacing.xl} * 2)`,
+		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
 		minHeight: 550,
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.white,
 		[theme.fn.smallerThan('md')]: {
 			minHeight: 350,
 			backgroundColor:
-				theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1]
+				theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.white
 		}
 	},
 
@@ -25,6 +25,6 @@ export const useStyles = createStyles((theme) => ({
 			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
 		}`,
 		backgroundColor:
-			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[1],
+			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[1]
 	}
 }))
