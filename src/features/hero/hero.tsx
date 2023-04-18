@@ -52,7 +52,13 @@ export const HeroContent = () => {
 								size="sm"
 								icon={
 									<ThemeIcon color="#FFD200" size={20} radius="xl">
-										<IconCheck color="#000" size={rem(13)} stroke={1.9} />
+										<IconCheck
+											role="presentation"
+											aria-hidden="true"
+											color="#000"
+											size={rem(13)}
+											stroke={1.9}
+										/>
 									</ThemeIcon>
 								}
 							>
@@ -77,6 +83,8 @@ export const HeroContent = () => {
 
 							<Group className={classes.controlGroup} mt={30}>
 								<a
+									role="button"
+									aria-label="перейти в телеграм"
 									href="https://t.me/EdBase_bot"
 									target="_blank"
 									rel="noopener noreferrer"
@@ -91,6 +99,7 @@ export const HeroContent = () => {
 									</Button>
 								</a>
 								<Button
+									aria-label="открыть видео с демонстрацией работы приложения Ed-Base"
 									onClick={openModal}
 									variant="default"
 									radius="xl"
@@ -102,9 +111,11 @@ export const HeroContent = () => {
 							</Group>
 						</div>
 						<Image
+							role="presentation"
+							aria-hidden="true"
 							src={heroImage}
+							alt=""
 							className={classes.image}
-							alt="Девушка в позе лотоса"
 						/>
 					</div>
 				</Container>

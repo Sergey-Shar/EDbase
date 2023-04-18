@@ -6,7 +6,6 @@ import {
 	Text,
 	SimpleGrid,
 	ThemeIcon,
-	Anchor,
 	Divider,
 	Center,
 	Box,
@@ -34,7 +33,10 @@ export const AppHeader = () => {
 		<UnstyledButton className={classes.subLink} key={item.title}>
 			<Group noWrap align="flex-start">
 				<ThemeIcon size={34} variant="default" radius="md">
-					<item.icon size={rem(22)} color={'#000'} />
+					<item.icon
+						size={rem(22)}
+						color={'gray'}
+					/>
 				</ThemeIcon>
 				<div>
 					<Text size="sm" fw={500}>
@@ -54,9 +56,14 @@ export const AppHeader = () => {
 				<Container size="xl">
 					<Group position="apart" sx={{ height: rem(60) }}>
 						<a href="#header">
-							<img src={logo} className={classes.logo} alt="Ed base logo" />
+							<img
+								src={logo}
+								className={classes.logo}
+								alt="Логотип стартапа Ed-base"
+							/>
 						</a>
 						<Group
+							aria-label="Главная навигация по приложению Ed-base"
 							sx={{ height: '100%' }}
 							spacing={0}
 							className={classes.hiddenMobile}
@@ -74,7 +81,7 @@ export const AppHeader = () => {
 											<Box component="span" mr={5}>
 												Фичи
 											</Box>
-											<IconChevronDown size={16} color={'#000'} />
+											<IconChevronDown size={16}  />
 										</Center>
 									</a>
 								</HoverCard.Target>
@@ -103,12 +110,17 @@ export const AppHeader = () => {
 								Пробовать
 							</a>
 						</Group>
-						<Group className={classes.hiddenMobile}>
-							<ButtonToggleTheme aria-label="переключатель темы сайта" />
+						<Group
+							className={classes.hiddenMobile}
+						>
+							<ButtonToggleTheme />
 						</Group>
 
 						<Burger
-							aria-label="меню бургер"
+							role="button"
+							aria-label="кнопка в виде трех полосок 
+							для открытия меню 
+							для мобильных телефонов"
 							opened={drawerOpened}
 							onClick={toggleDrawer}
 							className={classes.hiddenDesktop}
@@ -136,7 +148,7 @@ export const AppHeader = () => {
 							<Box component="span" mr={5}>
 								Фичи
 							</Box>
-							<IconChevronDown size={16} color={'#000'} />
+							<IconChevronDown size={16} />
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{links}</Collapse>

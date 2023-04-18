@@ -23,13 +23,28 @@ export const ButtonToggleTheme = ()  => {
 
 	return (
 		<Switch
+			aria-label="Переключение темы приложения"
+			role="radio"
+			aria-checked="false"
 			checked={checked}
 			onChange={toggleChecked}
 			size="md"
 			color={theme.colorScheme === 'dark' ? 'gray' : 'dark'}
-			onLabel={<IconSun size="1rem" stroke={2.5} color={theme.colors.yellow[4]} />}
+			onLabel={
+				<IconSun
+					aria-hidden="true"
+					size="1rem"
+					stroke={2.5}
+					color={theme.colors.yellow[4]}
+				/>
+			}
 			offLabel={
-				<IconMoonStars size="1rem" stroke={2.5} color={theme.colors.dark[3]} />
+				<IconMoonStars
+					aria-hidden="true"
+					size="1rem"
+					stroke={2.5}
+					color={theme.colors.dark[3]}
+				/>
 			}
 		/>
 	)

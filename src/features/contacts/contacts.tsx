@@ -74,7 +74,7 @@ export const Contacts = () => {
 					<SimpleGrid cols={2} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 						<TextInput
 							data-autofocus
-							icon={<IconUser size={'1rem'} />}
+							icon={<IconUser aria-hidden="true" size={'1rem'} />}
 							label="Имя"
 							placeholder="Ваше имя"
 							name="name"
@@ -83,7 +83,7 @@ export const Contacts = () => {
 						/>
 						<TextInput
 							required
-							icon={<IconAt size="1rem" />}
+							icon={<IconAt aria-hidden="true" size="1rem" />}
 							label="Почта"
 							placeholder="Ваша почта"
 							name="email"
@@ -104,7 +104,13 @@ export const Contacts = () => {
 						{...formMessage.getInputProps('message')}
 					/>
 					<Group position="center" mt="xl">
-						<Button mt={15} className={classes.button} disabled={isDisable} type="submit" size="md">
+						<Button
+							mt={15}
+							className={classes.button}
+							disabled={isDisable}
+							type="submit"
+							size="md"
+						>
 							Отправить сообщение
 						</Button>
 					</Group>

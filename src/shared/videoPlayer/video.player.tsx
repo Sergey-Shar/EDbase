@@ -14,8 +14,13 @@ import video from '../../assets/videos/video.mp4'
 export const VideoPlayer = () => {
 	return (
 		<Player preload="none">
-			<source src={video} />
-			<BigPlayButton  aria-label="включить видео" position="center" />
+			<source
+				aria-describedby="В этом видео ролике 
+			показан работающий прототип 
+			приложения Ed-base"
+				src={video}
+			/>
+			<BigPlayButton aria-label="включить видео" position="center" />
 			<ControlBar>
 				<ReplayControl seconds={10} />
 				<ForwardControl seconds={30} />
