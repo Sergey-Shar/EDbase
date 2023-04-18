@@ -104,7 +104,7 @@ export const Contacts = () => {
 						{...formMessage.getInputProps('message')}
 					/>
 					<Group position="center" mt="xl">
-						<Button disabled={isDisable} type="submit" size="md">
+						<Button mt={15} className={classes.button} disabled={isDisable} type="submit" size="md">
 							Отправить сообщение
 						</Button>
 					</Group>

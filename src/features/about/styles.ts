@@ -5,7 +5,6 @@ export const useStyles = createStyles((theme) => ({
 		backgroundColor:
 			 theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
 				[theme.fn.smallerThan('md')]: {
-		  display: 'none'
 		}
 	},
 
@@ -13,19 +12,17 @@ export const useStyles = createStyles((theme) => ({
 		flex: 1,
 		[theme.fn.smallerThan('sm')]: {
 			maxWidth: '100%',
-			marginTop: `calc(${theme.spacing.xl} * 2)`
 		}
 	},
 
 	body: {
 		display: 'flex',
 		justifyContent: 'space-between',
-		paddingTop: `calc(${theme.spacing.xl} * 4)`,
-		paddingBottom: `calc(${theme.spacing.xl} * 4)`,
+		paddingTop: `calc(${theme.spacing.xl} * 2)`,
+		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
 
 		[theme.fn.smallerThan('sm')]: {
 			flexDirection: 'column-reverse',
-			padding: theme.spacing.xl,
 			paddingRight: 0
 		}
 	},
@@ -36,8 +33,6 @@ export const useStyles = createStyles((theme) => ({
 		[theme.fn.smallerThan('md')]: {
 			maxWidth: '100%',
 			marginRight: 0,
-			marginTop: `calc(${theme.spacing.xl} * 2)`,
-			paddingBottom: `calc(${theme.spacing.xl} * 2)`
 		}
 	},
 
@@ -47,8 +42,5 @@ export const useStyles = createStyles((theme) => ({
 		lineHeight: 1,
 		marginBottom: theme.spacing.xl,
 		marginTop: theme.spacing.md
-	},
-text:{
-	// lineHeight:'2rem'
-}
+	}
 }))

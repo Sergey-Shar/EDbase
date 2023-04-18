@@ -21,9 +21,7 @@ export const FeaturesGrid = ({ title, data = MOCKDATA }: FeaturesGridProps) => {
 	return (
 		<div className={classes.wrapper}>
 			<Container id="features" size="xl">
-				<Title className={classes.title}>{title}</Title>
 				<SimpleGrid
-					mt={60}
 					cols={3}
 					spacing={50}
 					breakpoints={[

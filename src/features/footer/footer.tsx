@@ -52,7 +52,7 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 				{/* <div className={classes.groups}>{groups}</div> */}
 			</Container>
 			<Container className={classes.afterFooter}>
-				<Text color="dimmed" size="sm">
+				<Text className={classes.text} color="dimmed" size="sm">
 					Copyright © 2023 Ed-Base All rights reserved.
 				</Text>
 

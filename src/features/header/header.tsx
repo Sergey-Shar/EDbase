@@ -15,16 +15,16 @@ import {
 	Collapse,
 	ScrollArea,
 	rem,
-	Container,
+	Container
 } from '@mantine/core'
 import logo from '../../assets/images/logo2.png'
 import { useDisclosure } from '@mantine/hooks'
-import {IconChevronDown} from '@tabler/icons-react'
+import { IconChevronDown } from '@tabler/icons-react'
 import { useStyles } from './styles'
 import { featureMenu } from './feature.data'
 import { ButtonToggleTheme } from './toggle.theme'
 
-export const  AppHeader = () => {
+export const AppHeader = () => {
 	const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
 		useDisclosure(false)
 	const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false)
@@ -34,7 +34,7 @@ export const  AppHeader = () => {
 		<UnstyledButton className={classes.subLink} key={item.title}>
 			<Group noWrap align="flex-start">
 				<ThemeIcon size={34} variant="default" radius="md">
-					<item.icon size={rem(22)} color={theme.fn.primaryColor()} />
+					<item.icon size={rem(22)} color={'#000'} />
 				</ThemeIcon>
 				<div>
 					<Text size="sm" fw={500}>
@@ -74,7 +74,7 @@ export const  AppHeader = () => {
 											<Box component="span" mr={5}>
 												Фичи
 											</Box>
-											<IconChevronDown size={16} color={theme.fn.primaryColor()} />
+											<IconChevronDown size={16} color={'#000'} />
 										</Center>
 									</a>
 								</HoverCard.Target>
@@ -136,7 +136,7 @@ export const  AppHeader = () => {
 							<Box component="span" mr={5}>
 								Фичи
 							</Box>
-							<IconChevronDown size={16} color={theme.fn.primaryColor()} />
+							<IconChevronDown size={16} color={'#000'} />
 						</Center>
 					</UnstyledButton>
 					<Collapse in={linksOpened}>{links}</Collapse>

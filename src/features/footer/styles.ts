@@ -95,5 +95,10 @@ export const useStyles = createStyles((theme) => ({
 		[theme.fn.smallerThan('sm')]: {
 			marginTop: theme.spacing.xs
 		}
+	},
+	text: {
+		[theme.fn.smallerThan('sm')]: {
+			textAlign: 'center'
+		}
 	}
 }))
