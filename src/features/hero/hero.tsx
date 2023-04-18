@@ -83,7 +83,6 @@ export const HeroContent = () => {
 								>
 									<Button
 										variant="default"
-										//onClick={openDrawer}
 										radius="xl"
 										size="md"
 										className={classes.controlLeft}
@@ -92,6 +91,7 @@ export const HeroContent = () => {
 									</Button>
 								</a>
 								<Button
+									onClick={openModal}
 									variant="default"
 									radius="xl"
 									size="md"
