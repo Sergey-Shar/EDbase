@@ -1,8 +1,0 @@
-app/vercel/e_dbase/twa/Application.java
- app.vercel.e_dbase.twa.Application
-app/vercel/e_dbase/twa/BuildConfig.java
- app.vercel.e_dbase.twa.BuildConfig
-app/vercel/e_dbase/twa/DelegationService.java
- app.vercel.e_dbase.twa.DelegationService
-app/vercel/e_dbase/twa/LauncherActivity.java
- app.vercel.e_dbase.twa.LauncherActivity

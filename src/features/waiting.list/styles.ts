@@ -4,12 +4,18 @@ export const useStyles = createStyles((theme) => ({
 	wrapper: {
 		paddingTop: `calc(${theme.spacing.xl} * 2)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
-		minHeight: 250,
+		minHeight: 300,
+		backgroundImage:
+		'url(src/assets/images/arrow.png)',
+		backgroundSize: 'contain',
+		//backgroundRepeat:'no-repeat',
+		backgroundPosition: 'center',
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
 		[theme.fn.smallerThan('md')]: {
 			backgroundColor:
-				theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0]
+				theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+				backgroundImage:'none'
 		}
 	},
 
@@ -18,7 +24,7 @@ export const useStyles = createStyles((theme) => ({
 	},
 	description: {
 		textAlign: 'center',
-		margin: '2rem 0',
+		margin: '3rem 0',
 
 		[theme.fn.smallerThan('xs')]: {
 			fontSize: theme.fontSizes.md,
