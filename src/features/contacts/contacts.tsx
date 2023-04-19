@@ -70,7 +70,7 @@ export const Contacts = () => {
 				>
 					Связаться
 				</Title>
-				<form noValidate onSubmit={handleSubmit}>
+				<form  onSubmit={handleSubmit}>
 					<SimpleGrid cols={2} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 						<TextInput
 							data-autofocus

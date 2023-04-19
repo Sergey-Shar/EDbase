@@ -64,7 +64,7 @@ export const useStyles = createStyles((theme) => ({
 	},
 	controlLeft: {
 		backgroundColor: '#FFD200',
-		color:theme.black,
+		color: theme.black,
 		border: 0,
 		'&:not([data-disabled])': theme.fn.hover({
 			backgroundColor: theme.fn.darken('#FFD200', 0.03)
@@ -86,8 +86,18 @@ export const useStyles = createStyles((theme) => ({
 	image: {
 		flex: 1,
 		[theme.fn.smallerThan('sm')]: {
+			display: 'none'
+		}
+	},
+
+	imageSmall: {
+		display: 'none',
+		[theme.fn.smallerThan('sm')]: {
+			display:'block',
+			flex: 1,
 			maxWidth: '100%',
-			marginBottom: `calc(${theme.spacing.xl} * 1)`
+			marginBottom: `calc(${theme.spacing.xl} * 1)`,
+			marginTop: `calc(${theme.spacing.xl} * 1.5)`
 		}
 	},
 

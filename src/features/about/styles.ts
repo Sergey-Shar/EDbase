@@ -11,7 +11,7 @@ export const useStyles = createStyles((theme) => ({
 	image: {
 		flex: 1,
 		[theme.fn.smallerThan('sm')]: {
-			maxWidth: '100%',
+		display:'none',
 		}
 	},
 

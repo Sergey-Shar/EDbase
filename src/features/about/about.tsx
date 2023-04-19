@@ -1,5 +1,5 @@
 import { Text, Title, Image, Container } from '@mantine/core'
-import aboutImage from 'src/assets/images/about-image.png'
+import teamImage from 'src/assets/images/team.png'
 import { useStyles } from './styles'
 
 export const About = () => {
@@ -28,7 +28,7 @@ export const About = () => {
 						role="presentation"
 						aria-hidden="true"
 						alt=""
-						src={aboutImage}
+						src={teamImage}
 						className={classes.image}
 					/>
 				</div>

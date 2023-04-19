@@ -8,17 +8,21 @@ import {
 	List,
 	ThemeIcon,
 	rem,
-	Notification
+	Notification,
+	Skeleton
 } from '@mantine/core'
 import { IconCheck } from '@tabler/icons-react'
-import heroImage from 'src/assets/images/hero-image.png'
+import heroImage from 'src/assets/images/main1000X1000.png'
+import heroImageSmall from 'src/assets/images/main320x320.png'
 import { useStyles } from './styles'
 import { useDisclosure } from '@mantine/hooks'
 import { VideoModal } from './video.modal'
 import { DrawerReviews } from './drawer'
+import { useState } from 'react'
 
 export const HeroContent = () => {
-	const { classes } = useStyles()
+	const [loading, setLoading] = useState(true)
+	const { classes, theme } = useStyles()
 	const [openedModal, { open: openModal, close: closeModal }] =
 		useDisclosure(false)
 	const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
@@ -111,11 +115,22 @@ export const HeroContent = () => {
 							</Group>
 						</div>
 						<Image
+							radius="lg"
 							role="presentation"
 							aria-hidden="true"
 							src={heroImage}
 							alt=""
 							className={classes.image}
+							withPlaceholder
+						/>
+						<Image
+							radius="lg"
+							role="presentation"
+							aria-hidden="true"
+							src={heroImageSmall}
+							alt=""
+							className={classes.imageSmall}
+							withPlaceholder
 						/>
 					</div>
 				</Container>

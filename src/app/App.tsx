@@ -14,7 +14,7 @@ const value = useTheme()
 			withNormalizeCSS
 			theme={{ colorScheme: `${value}` }}
 		>
-			<Notifications position="top-center" limit={2} zIndex={2077} />
+			<Notifications id='notification' position="top-center" limit={2} zIndex={2077} />
 			<MainPage />
 		</MantineProvider>
 	)

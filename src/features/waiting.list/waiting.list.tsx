@@ -4,7 +4,8 @@ import {
 	Group,
 	Title,
 	Button,
-	Container
+	Container,
+	BackgroundImage
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useStyles } from './styles'
@@ -14,7 +15,7 @@ import { showNotification } from 'src/shared/utils/showNotification'
 import { isAxiosError } from 'axios'
 import { IconBrandTelegram, IconUser } from '@tabler/icons-react'
 import { useState } from 'react'
-
+import arrowBg from 'src/assets/images/arrow.png'
 export const WaitingList = () => {
 		//const [isDisable, setDisable] = useState(false)
 	// const form = useForm({
@@ -61,17 +62,16 @@ export const WaitingList = () => {
 	return (
 		<>
 			<div id="waiting" className={classes.wrapper}>
-				<Container size="xs">
-					<Title
-						order={2}
-						size="h1"
-						sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}` })}
-						align="center"
-					>
-						Возьми под контроль хаос в своих знаниях!
-					</Title>
-					<Container size={640}></Container>
-					{/* <form onSubmit={handleSubmit}>
+						<Title
+						mt='5%'
+							order={2}
+							size="h1"
+							sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}` })}
+							align="center"
+						>
+							Возьми под контроль хаос в своих знаниях!
+						</Title>
+						{/* <form onSubmit={handleSubmit}>
 						<SimpleGrid cols={1} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 							<TextInput
 								required
@@ -96,18 +96,17 @@ export const WaitingList = () => {
 							/>
 						</SimpleGrid>
 					</form> */}
-					<Group position="center" mt="xl">
-						<a
-							href="https://t.me/EdBase_bot"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<Button className={classes.button} type="button" size="md">
-								Пробовать
-							</Button>
-						</a>
-					</Group>
-				</Container>
+						<Group position="center" mt="xl">
+							<a
+								href="https://t.me/EdBase_bot"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<Button className={classes.button} type="button" size="md">
+									Пробовать
+								</Button>
+							</a>
+						</Group>
 			</div>
 		</>
 	)
