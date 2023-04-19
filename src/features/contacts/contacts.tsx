@@ -27,7 +27,11 @@ export const Contacts = () => {
 		},
 		validate: {
 			email: (value) =>
-				!/^\S+@\S+$/.test(value) ? 'Email введен не корректно' : null
+				!/^\S+@\S+$/.test(value) ? 'Email введен не корректно' : null,
+			message: (value) =>
+				value.trim() === '' || value.trim().length < 5
+					? 'Поле не может быть пустым'
+					: null
 		}
 	})
 
@@ -70,7 +74,7 @@ export const Contacts = () => {
 				>
 					Связаться
 				</Title>
-				<form  onSubmit={handleSubmit}>
+				<form noValidate onSubmit={handleSubmit}>
 					<SimpleGrid cols={2} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
 						<TextInput
 							data-autofocus
@@ -92,6 +96,7 @@ export const Contacts = () => {
 						/>
 					</SimpleGrid>
 					<Textarea
+						minLength={10}
 						required
 						mt="md"
 						label="Сообщение "
