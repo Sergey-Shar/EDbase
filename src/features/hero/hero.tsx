@@ -18,19 +18,15 @@ import heroImageSmall from 'src/assets/images/main320x320.png'
 import { useStyles } from './styles'
 import { useDisclosure } from '@mantine/hooks'
 import { VideoModal } from './video.modal'
-import { DrawerReviews } from './drawer'
-import { useState } from 'react'
 
 export const HeroContent = () => {
-	const { classes, theme } = useStyles()
+	const { classes } = useStyles()
 	const [openedModal, { open: openModal, close: closeModal }] =
 		useDisclosure(false)
-	const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
-		useDisclosure(false)
+
 	return (
 		<>
 			<VideoModal opened={openedModal} close={closeModal} />
-			<DrawerReviews opened={openedDrawer} close={closeDrawer} />
 			<div id="about" className={classes.wrapper}>
 				<Container size="xl">
 					<div className={classes.body}>
