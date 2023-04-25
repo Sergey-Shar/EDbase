@@ -8,7 +8,6 @@ export const useStyles = createStyles((theme) => ({
 		backgroundImage:
 		'url(src/assets/images/arrow.png)',
 		backgroundSize: 'contain',
-		//backgroundRepeat:'no-repeat',
 		backgroundPosition: 'center',
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
@@ -20,7 +19,7 @@ export const useStyles = createStyles((theme) => ({
 	},
 
 	title: {
-		marginBottom: `calc(${theme.spacing.xl} * 1.5)`
+		marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
 	},
 	description: {
 		textAlign: 'center',

@@ -9,7 +9,8 @@ import {
 	ThemeIcon,
 	rem,
 	Notification,
-	Skeleton
+	Skeleton,
+	Tooltip
 } from '@mantine/core'
 import { IconCheck } from '@tabler/icons-react'
 import heroImage from 'src/assets/images/main1000X1000.png'
@@ -17,20 +18,15 @@ import heroImageSmall from 'src/assets/images/main320x320.png'
 import { useStyles } from './styles'
 import { useDisclosure } from '@mantine/hooks'
 import { VideoModal } from './video.modal'
-import { DrawerReviews } from './drawer'
-import { useState } from 'react'
 
 export const HeroContent = () => {
-	const [loading, setLoading] = useState(true)
-	const { classes, theme } = useStyles()
+	const { classes } = useStyles()
 	const [openedModal, { open: openModal, close: closeModal }] =
 		useDisclosure(false)
-	const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
-		useDisclosure(false)
+
 	return (
 		<>
 			<VideoModal opened={openedModal} close={closeModal} />
-			<DrawerReviews opened={openedDrawer} close={closeDrawer} />
 			<div id="about" className={classes.wrapper}>
 				<Container size="xl">
 					<div className={classes.body}>
@@ -86,22 +82,22 @@ export const HeroContent = () => {
 							</List>
 
 							<Group className={classes.controlGroup} mt={30}>
-								<a
-									role="button"
-									aria-label="перейти в телеграм"
-									href="https://t.me/EdBase_bot"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<Button
-										variant="default"
-										radius="xl"
-										size="md"
-										className={classes.controlLeft}
+									<a
+										role="button"
+										aria-label="перейти в телеграм"
+										href="https://t.me/EdBase_bot"
+										target="_blank"
+										rel="noopener noreferrer"
 									>
-										Пробовать
-									</Button>
-								</a>
+										<Button
+											variant="default"
+											radius="xl"
+											size="md"
+											className={classes.controlLeft}
+										>
+											Пробовать
+										</Button>
+									</a>
 								<Button
 									aria-label="открыть видео с демонстрацией работы приложения Ed-Base"
 									onClick={openModal}

@@ -11,7 +11,7 @@ export const useStyles = createStyles((theme) => ({
 		borderBottom: `1px solid ${
 			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0]
 		}`,
-		position: 'fixed',
+		position: 'fixed'
 	},
 	logo: {
 		width: '2.5rem',
@@ -77,6 +77,7 @@ export const useStyles = createStyles((theme) => ({
 			display: 'none'
 		}
 	},
+
 	control: {
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
@@ -101,5 +102,11 @@ export const useStyles = createStyles((theme) => ({
 
 	value: {
 		lineHeight: 1
+	},
+
+	toggleThemeMobile: {
+		[theme.fn.largerThan('sm')]: {
+			display: 'none'
+		}
 	}
 }))

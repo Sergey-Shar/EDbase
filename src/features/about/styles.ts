@@ -3,15 +3,14 @@ import { rem, createStyles } from '@mantine/core'
 export const useStyles = createStyles((theme) => ({
 	wrapper: {
 		backgroundColor:
-			 theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-				[theme.fn.smallerThan('md')]: {
-		}
+			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+		[theme.fn.smallerThan('md')]: {}
 	},
 
 	image: {
 		flex: 1,
 		[theme.fn.smallerThan('sm')]: {
-		display:'none',
+			display: 'none'
 		}
 	},
 
@@ -32,7 +31,7 @@ export const useStyles = createStyles((theme) => ({
 		marginRight: `calc(${theme.spacing.xl} * 3)`,
 		[theme.fn.smallerThan('md')]: {
 			maxWidth: '100%',
-			marginRight: 0,
+			marginRight: 0
 		}
 	},
 
@@ -41,6 +40,14 @@ export const useStyles = createStyles((theme) => ({
 		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 		lineHeight: 1,
 		marginBottom: theme.spacing.xl,
-		marginTop: theme.spacing.md
+		marginTop: theme.spacing.md,
+		[theme.fn.smallerThan('xs')]: {
+			textAlign: 'center'
+		}
+	},
+	text: {
+		[theme.fn.smallerThan('xs')]: {
+			textAlign: 'center'
+		}
 	}
 }))
