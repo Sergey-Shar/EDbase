@@ -5,20 +5,22 @@ import {
 	Group,
 	Title,
 	Button,
-	Container
+	Container,
+	LoadingOverlay,
+	Box
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useStyles } from './styles'
 import { IconAt, IconUser } from '@tabler/icons-react'
 import { randomId } from '@mantine/hooks'
-
-import { isAxiosError } from 'axios'
 import { showNotification } from 'src/shared/utils/showNotification'
 import api from 'src/app/services/api'
 import { useState } from 'react'
+import { errorHandler } from 'src/shared/utils/handle.errors'
+import { AxiosError } from 'axios'
 
 export const Contacts = () => {
-	const [isDisable, setDisable] = useState(false)
+	const [isLoading, setLoading] = useState(false)
 	const formMessage = useForm({
 		initialValues: {
 			name: '',
@@ -38,11 +40,12 @@ export const Contacts = () => {
 	const { classes } = useStyles()
 
 	const handleSubmit = formMessage.onSubmit(async (userData) => {
-		setDisable(true)
-		//@ts-ignore
-		window.ym(93141352, 'reachGoal', 'submit')
+		setLoading(true)
 		try {
-			api.sendMessage('message.json', {
+			if (!userData) {
+				throw new Error('userData is undefined')
+			}
+			await api.sendMessage('message.json', {
 				...userData,
 				_id: randomId()
 			})
@@ -53,13 +56,9 @@ export const Contacts = () => {
 				'Сообщение успешно отправлено, спасибо за ваш отзыв!'
 			)
 		} catch (error) {
-			if (isAxiosError(error)) {
-				showNotification('red', 'Error', error?.message, false)
-			} else if (error instanceof Error) {
-				showNotification('red', 'Error', error?.message, false)
-			}
+			errorHandler(error as AxiosError | Error)
 		} finally {
-			setDisable(false)
+			setLoading(false)
 		}
 	})
 
@@ -74,52 +73,53 @@ export const Contacts = () => {
 				>
 					Связаться
 				</Title>
-				<form noValidate onSubmit={handleSubmit}>
-					<SimpleGrid cols={2} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-						<TextInput
-							data-autofocus
-							icon={<IconUser aria-hidden="true" size={'1rem'} />}
-							label="Имя"
-							placeholder="Ваше имя"
-							name="name"
-							variant="filled"
-							{...formMessage.getInputProps('name')}
-						/>
-						<TextInput
-							required
-							icon={<IconAt aria-hidden="true" size="1rem" />}
-							label="Почта"
-							placeholder="Ваша почта"
-							name="email"
-							variant="filled"
-							{...formMessage.getInputProps('email')}
-						/>
-					</SimpleGrid>
-					<Textarea
-						minLength={10}
-						required
-						mt="md"
-						label="Сообщение "
-						placeholder="Ваше сообщение "
-						maxRows={10}
-						minRows={5}
-						autosize
-						name="message"
-						variant="filled"
-						{...formMessage.getInputProps('message')}
+				<Box pos="relative">
+					<LoadingOverlay
+						loaderProps={{ color: '#FFD200', variant: 'dots' }}
+						visible={isLoading}
+						overlayBlur={2}
 					/>
-					<Group position="center" mt="xl">
-						<Button
-							mt={15}
-							className={classes.button}
-							disabled={isDisable}
-							type="submit"
-							size="md"
-						>
-							Отправить сообщение
-						</Button>
-					</Group>
-				</form>
+					<form noValidate onSubmit={handleSubmit}>
+						<SimpleGrid cols={2} mt="xl" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+							<TextInput
+								data-autofocus
+								icon={<IconUser aria-hidden="true" size={'1rem'} />}
+								label="Имя"
+								placeholder="Ваше имя"
+								name="name"
+								variant="filled"
+								{...formMessage.getInputProps('name')}
+							/>
+							<TextInput
+								required
+								icon={<IconAt aria-hidden="true" size="1rem" />}
+								label="Почта"
+								placeholder="Ваша почта"
+								name="email"
+								variant="filled"
+								{...formMessage.getInputProps('email')}
+							/>
+						</SimpleGrid>
+						<Textarea
+							minLength={10}
+							required
+							mt="md"
+							label="Сообщение "
+							placeholder="Ваше сообщение "
+							maxRows={10}
+							minRows={5}
+							autosize
+							name="message"
+							variant="filled"
+							{...formMessage.getInputProps('message')}
+						/>
+						<Group position="center" mt="xl">
+							<Button mt={15} className={classes.button} type="submit" size="md">
+								Отправить сообщение
+							</Button>
+						</Group>
+					</form>
+				</Box>
 			</Container>
 		</div>
 	)

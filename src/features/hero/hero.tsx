@@ -9,7 +9,8 @@ import {
 	ThemeIcon,
 	rem,
 	Notification,
-	Skeleton
+	Skeleton,
+	Tooltip
 } from '@mantine/core'
 import { IconCheck } from '@tabler/icons-react'
 import heroImage from 'src/assets/images/main1000X1000.png'
@@ -21,7 +22,6 @@ import { DrawerReviews } from './drawer'
 import { useState } from 'react'
 
 export const HeroContent = () => {
-	const [loading, setLoading] = useState(true)
 	const { classes, theme } = useStyles()
 	const [openedModal, { open: openModal, close: closeModal }] =
 		useDisclosure(false)
@@ -86,22 +86,22 @@ export const HeroContent = () => {
 							</List>
 
 							<Group className={classes.controlGroup} mt={30}>
-								<a
-									role="button"
-									aria-label="перейти в телеграм"
-									href="https://t.me/EdBase_bot"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<Button
-										variant="default"
-										radius="xl"
-										size="md"
-										className={classes.controlLeft}
+									<a
+										role="button"
+										aria-label="перейти в телеграм"
+										href="https://t.me/EdBase_bot"
+										target="_blank"
+										rel="noopener noreferrer"
 									>
-										Пробовать
-									</Button>
-								</a>
+										<Button
+											variant="default"
+											radius="xl"
+											size="md"
+											className={classes.controlLeft}
+										>
+											Пробовать
+										</Button>
+									</a>
 								<Button
 									aria-label="открыть видео с демонстрацией работы приложения Ed-Base"
 									onClick={openModal}

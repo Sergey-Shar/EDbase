@@ -11,7 +11,6 @@ import {
 	Box,
 	Burger,
 	Drawer,
-	Collapse,
 	ScrollArea,
 	rem,
 	Container
@@ -22,21 +21,21 @@ import { IconChevronDown } from '@tabler/icons-react'
 import { useStyles } from './styles'
 import { featureMenu } from './feature.data'
 import { ButtonToggleTheme } from './toggle.theme'
+import { useTranslation } from 'src/context/language/translation.context'
+import { LanguageMenu } from './change.language'
 
 export const AppHeader = () => {
 	const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
 		useDisclosure(false)
-	const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false)
 	const { classes, theme } = useStyles()
+
+	const { t } = useTranslation()
 
 	const links = featureMenu.map((item) => (
 		<UnstyledButton className={classes.subLink} key={item.title}>
 			<Group noWrap align="flex-start">
 				<ThemeIcon size={34} variant="default" radius="md">
-					<item.icon
-						size={rem(22)}
-						color={'gray'}
-					/>
+					<item.icon size={rem(22)} color={'gray'} />
 				</ThemeIcon>
 				<div>
 					<Text size="sm" fw={500}>
@@ -55,6 +54,7 @@ export const AppHeader = () => {
 			<Header className={classes.header} height={60}>
 				<Container size="xl">
 					<Group position="apart" sx={{ height: rem(60) }}>
+						<ButtonToggleTheme className={classes.toggleThemeMobile}/>
 						<a href="#header">
 							<img
 								src={logo}
@@ -79,16 +79,16 @@ export const AppHeader = () => {
 									<a href="#features" className={classes.link}>
 										<Center inline>
 											<Box component="span" mr={5}>
-												Фичи
+												{t('features')}
 											</Box>
-											<IconChevronDown size={16}  />
+											<IconChevronDown size={16} />
 										</Center>
 									</a>
 								</HoverCard.Target>
 
 								<HoverCard.Dropdown sx={{ overflow: 'hidden' }}>
 									<Group position="apart" px="md">
-										<Text fw={500}> Фичи </Text>
+										<Text fw={500}> {t('features')} </Text>
 									</Group>
 									<Divider
 										my="sm"
@@ -101,18 +101,17 @@ export const AppHeader = () => {
 								</HoverCard.Dropdown>
 							</HoverCard>
 							<a href="#about" className={classes.link}>
-								О нас
+								{t('about')}
 							</a>
 							<a href="#questions" className={classes.link}>
-								Вопросы
+								{t('questions')}
 							</a>
 							<a href="#waiting" className={classes.link}>
-								Пробовать
+								{t('waiting')}
 							</a>
 						</Group>
-						<Group
-							className={classes.hiddenMobile}
-						>
+						<Group className={classes.hiddenMobile}>
+							<LanguageMenu />
 							<ButtonToggleTheme />
 						</Group>
 
@@ -133,29 +132,16 @@ export const AppHeader = () => {
 				onClose={closeDrawer}
 				size="100%"
 				padding="md"
-				title="Навигация"
+				title={t('menu')}
 				className={classes.hiddenDesktop}
 				zIndex={1000000}
 			>
-				<ButtonToggleTheme />
 				<ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
 					<Divider
 						my="sm"
 						color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}
 					/>
-					<UnstyledButton className={classes.link} onClick={toggleLinks}>
-						<Center inline>
-							<Box component="span" mr={5}>
-								Фичи
-							</Box>
-							<IconChevronDown size={16} />
-						</Center>
-					</UnstyledButton>
-					<Collapse in={linksOpened}>{links}</Collapse>
-					<Divider
-						my="sm"
-						color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'}
-					/>
+					<LanguageMenu />
 				</ScrollArea>
 			</Drawer>
 		</Box>

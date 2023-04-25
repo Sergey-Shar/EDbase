@@ -1,18 +1,14 @@
-import axios, { AxiosResponse } from 'axios'
+import axios, { AxiosError, AxiosResponse } from 'axios'
 import {
 	TNicknameResponse,
 	TNicknameSubmitValues
 } from './models/nickname.models'
 import { TMessageResponse, TSendMessageValues } from './models/message.models'
+import { showNotification } from 'src/shared/utils/showNotification'
 
 const URL =
 	'https://edbase-3a55f-default-rtdb.europe-west1.firebasedatabase.app/'
-
 interface IApi {
-	submitNicknameTelegram: (
-		endPoint: string,
-		inputsValue: TNicknameSubmitValues
-	) => Promise<TNicknameResponse>
 	sendMessage: (
 		endPoint: string,
 		inputsValue: TSendMessageValues
@@ -29,17 +25,8 @@ class Api implements IApi {
 		}
 	})
 
-	private responseBody(response: AxiosResponse) {
+	private responseBody<T>(response: AxiosResponse<T>) {
 		return response.data
-	}
-
-	public async submitNicknameTelegram(
-		endPoint: string,
-		inputsValue: TNicknameSubmitValues
-	): Promise<TNicknameResponse> {
-		return this.instanceApi
-			.post<TNicknameSubmitValues>(endPoint, inputsValue)
-			.then(this.responseBody)
 	}
 
 	public async sendMessage(

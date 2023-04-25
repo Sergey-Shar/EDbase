@@ -1,9 +1,7 @@
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace'
 import { createContext, useContext, useMemo } from 'react'
 import { useLocalStorage } from 'src/hooks'
-
-type ThemeModeType = 'dark' | 'light'
-type ChangeThemeModeType = { toggleColorMode: () => void }
+import { ChangeThemeModeType, ThemeModeType } from './theme.types'
 
 const ThemeMode = createContext<ThemeModeType>('light')
 const ChangeThemeMode = createContext<ChangeThemeModeType>({
