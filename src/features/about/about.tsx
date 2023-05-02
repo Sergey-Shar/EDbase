@@ -1,29 +1,25 @@
 import { Text, Title, Image, Container } from '@mantine/core'
 import teamImage from 'src/assets/images/team.png'
 import { useStyles } from './styles'
+import { useTranslation } from 'src/context/language/translation.context'
 
 export const About = () => {
 	const { classes } = useStyles()
+		const { t } = useTranslation()
 	return (
 		<div id="about" className={classes.wrapper}>
 			<Container size="xl">
 				<div className={classes.body}>
 					<div className={classes.content}>
-						<Title className={classes.title}>Наша команда</Title>
-						<Text 
-						className={classes.text}
-						c="dimmed">
-							Команда EdBase - это 11 энтузиастов, объединенных одной идеей. <br /> При
-							проведении исследований, мы заметили, что многие люди, которые обучаются
-							или занимаются саморазвитием, сталкиваются с трудностями при работе с
-							сохраненными материалами. <br /> Это вдохновило нас на разработку
-							продукта EdBase.
-							<br /> Предложенное нами решение оценили первым местом на конкурсе
-							стартапов.
-							<br /> Сейчас мы продолжаем работу над созданием приложения.
-							<br /> EdBase поможет пользователям упростить процесс сохранения и
-							систематизации информации, получаемой из различных источников и в
-							различных форматах.
+						<Title className={classes.title}>{t('OurTeam')}</Title>
+						<Text className={classes.text} c="dimmed">
+							{t('OurTeamDescription1')}
+							<br />
+							{t('OurTeamDescription2')}
+							<br /> {t('OurTeamDescription3')}
+							<br /> {t('OurTeamDescription4')}
+							<br /> {t('OurTeamDescription5')}
+							<br /> {t('OurTeamDescription6')}
 						</Text>
 					</div>
 					<Image

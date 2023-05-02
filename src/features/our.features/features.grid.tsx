@@ -1,21 +1,22 @@
 import {
 	Container,
 	SimpleGrid,
- Title,
 } from '@mantine/core'
-import { MOCKDATA } from './mock.data'
+import { MOCK_DATA } from './mock.data'
 import { useStyles } from './styles'
-import { Feature, FeatureProps } from './features'
+import { Feature } from './features'
+import { useTranslation } from 'src/context/language/translation.context'
 
-interface FeaturesGridProps {
-	title: React.ReactNode
-	data?: FeatureProps[]
-}
-
-export const FeaturesGrid = ({ title, data = MOCKDATA }: FeaturesGridProps) => {
+export const FeaturesGrid = ({ data = MOCK_DATA }) => {
 	const { classes } = useStyles()
+	const { t } = useTranslation()
 	const features = data.map((feature, index) => (
-		<Feature {...feature} key={index} />
+		<Feature
+			icon={feature.icon}
+			title={t(`featureTitle${index + 1}`)}
+			description={t(`featureDescription${index + 1}`)}
+			key={index}
+		/>
 	))
 
 	return (

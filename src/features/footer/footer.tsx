@@ -5,51 +5,14 @@ import {
 	IconBrandLinkedin
 } from '@tabler/icons-react'
 import { useStyles } from './styles'
-import logo from '../../assets/images/logo.png'
-interface FooterLinksProps {
-	data: {
-		title: string
-		links: { label: string; link: string }[]
-	}[]
-}
 
-export const AppFooter = ({ data }: FooterLinksProps) => {
+export const AppFooter = () => {
 	const { classes } = useStyles()
-
-	const groups = data.map((group) => {
-		const links = group.links.map((link, index) => (
-			<Text<'a'>
-				key={index}
-				className={classes.link}
-				component="a"
-				href={link.link}
-				onClick={(event) => event.preventDefault()}
-			>
-				{link.label}
-			</Text>
-		))
-
-		return (
-			<div className={classes.wrapper} key={group.title}>
-				<Text className={classes.title}>{group.title}</Text>
-				{links}
-			</div>
-		)
-	})
-
 	return (
 		<footer className={classes.footer}>
 			<Container size="xl" className={classes.inner}>
 				<div className={classes.logo}>
-					{/* <a href="#header">
-						<img src={logo} className={classes.logoIcon} alt="Ed-base logo" />
-					</a> */}
-					{/* <Text size="sm" color="dimmed" className={classes.description}>
-						Приложение в автоматическом режиме сохранит и структурирует материал
-						любого формата
-					</Text> */}
 				</div>
-				{/* <div className={classes.groups}>{groups}</div> */}
 			</Container>
 			<Container className={classes.afterFooter}>
 				<Text className={classes.text} color="dimmed" size="sm">
@@ -69,7 +32,7 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 					</a>
 					<a
 						aria-label="перейти в телеграм канал"
-						href="https://t.me/+YgT6lPQgcek0Y2Qy"
+						href="https://t.me/SimplaseBot"
 						rel="noopener noreferrer"
 						target="_blank"
 					>
@@ -79,7 +42,7 @@ export const AppFooter = ({ data }: FooterLinksProps) => {
 					</a>
 					<a
 						aria-label="перейти в Instagram"
-						href="https://instagram.com/_edbase_startup?igshid=ZDdkNTZiNTM="
+						href="https://www.instagram.com/simplase/?igshid=YmMyMTA2M2Y%3D"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

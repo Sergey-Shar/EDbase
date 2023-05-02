@@ -18,6 +18,7 @@ import api from 'src/app/services/api'
 import { useState } from 'react'
 import { errorHandler } from 'src/shared/utils/handle.errors'
 import { AxiosError } from 'axios'
+import { useTranslation } from 'src/context/language/translation.context'
 
 export const Contacts = () => {
 	const [isLoading, setLoading] = useState(false)
@@ -38,6 +39,7 @@ export const Contacts = () => {
 	})
 
 	const { classes } = useStyles()
+ const { t } = useTranslation() 
 
 	const handleSubmit = formMessage.onSubmit(async (userData) => {
 		setLoading(true)
@@ -71,7 +73,7 @@ export const Contacts = () => {
 					sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}` })}
 					align="center"
 				>
-					Связаться
+					{t('contactsTitle')}
 				</Title>
 				<Box pos="relative">
 					<LoadingOverlay
@@ -84,8 +86,8 @@ export const Contacts = () => {
 							<TextInput
 								data-autofocus
 								icon={<IconUser aria-hidden="true" size={'1rem'} />}
-								label="Имя"
-								placeholder="Ваше имя"
+								label={t('contactFormLabelName')}
+								placeholder={t('contactFormPlaceholderName')}
 								name="name"
 								variant="filled"
 								{...formMessage.getInputProps('name')}
@@ -93,8 +95,8 @@ export const Contacts = () => {
 							<TextInput
 								required
 								icon={<IconAt aria-hidden="true" size="1rem" />}
-								label="Почта"
-								placeholder="Ваша почта"
+								label={t('contactFormLabelMail')}
+								placeholder={t('contactFormPlaceholderMail')}
 								name="email"
 								variant="filled"
 								{...formMessage.getInputProps('email')}
@@ -104,8 +106,8 @@ export const Contacts = () => {
 							minLength={10}
 							required
 							mt="md"
-							label="Сообщение "
-							placeholder="Ваше сообщение "
+							label={t('contactFormLabelMessage')}
+							placeholder={t('contactFormPlaceholderMessage')}
 							maxRows={10}
 							minRows={5}
 							autosize
@@ -114,8 +116,14 @@ export const Contacts = () => {
 							{...formMessage.getInputProps('message')}
 						/>
 						<Group position="center" mt="xl">
-							<Button mt={15} className={classes.button} type="submit" size="md">
-								Отправить сообщение
+							<Button
+								mt={15}
+								className={classes.button}
+								type="submit"
+								radius="xl"
+								size="md"
+							>
+								{t('contactsSubmitBtn')}
 							</Button>
 						</Group>
 					</form>
