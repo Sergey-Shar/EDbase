@@ -3,8 +3,8 @@ import React from 'react'
 import { useStyles } from './styles'
 interface FeatureProps {
 	icon: React.FC<any>
-	title: React.ReactNode
-	description: React.ReactNode
+	title: string
+	description: string
 }
 
 export const Feature = ({ icon: Icon, title, description }: FeatureProps) => {

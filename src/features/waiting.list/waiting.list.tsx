@@ -12,7 +12,7 @@ export const WaitingList = () => {
 		const { t } = useTranslation()
 	return (
 		<div id="waiting" className={classes.wrapper}>
-			<Container className={classes.container} size="xs">
+			<Container size="xs">
 				<Title
 					mt="5%"
 					order={2}

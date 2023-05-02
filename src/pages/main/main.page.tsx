@@ -14,7 +14,7 @@ export const MainPage = () => {
 			<AppHeader />
 			<ScrollTopBtn />
 			<HeroContent />
-			<FeaturesGrid title={'Фичи'} />
+			<FeaturesGrid />
 			<VideoSection />
 			<WaitingList />
 			<Questions />
