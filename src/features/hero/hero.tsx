@@ -7,10 +7,7 @@ import {
 	Text,
 	List,
 	ThemeIcon,
-	rem,
-	Notification,
-	Skeleton,
-	Tooltip
+	rem
 } from '@mantine/core'
 import { IconCheck } from '@tabler/icons-react'
 import heroImage from 'src/assets/images/main1000X1000.png'
@@ -18,12 +15,13 @@ import heroImageSmall from 'src/assets/images/main320x320.png'
 import { useStyles } from './styles'
 import { useDisclosure } from '@mantine/hooks'
 import { VideoModal } from './video.modal'
+import { useTranslation } from 'src/context/language/translation.context'
 
 export const HeroContent = () => {
 	const { classes } = useStyles()
 	const [openedModal, { open: openModal, close: closeModal }] =
 		useDisclosure(false)
-
+	const { t } = useTranslation()
 	return (
 		<>
 			<VideoModal opened={openedModal} close={closeModal} />
@@ -31,20 +29,14 @@ export const HeroContent = () => {
 				<Container size="xl">
 					<div className={classes.body}>
 						<div className={classes.content}>
-							<Title className={classes.title}>
-								Сохраняй, систематизируй
-								<br /> свои знания в одном месте.
-							</Title>
+							<Title className={classes.title}>{t('heroTitle')}</Title>
 							<Text className={classes.textDesktop} color="dimmed" mt="md">
-								Приложение в автоматическом режиме сохранит и структурирует материал
-								любого формата, создавая вашу персональную базу знаний.
-								<br /> Визуальное представление в виде майндмэпа позволит вам быстро
-								находить нужную информацию и видеть связи между знаниями.
+								{t('heroDescription1')}
+								<br />
+								{t('heroDescription2')}
 							</Text>
 							<Text className={classes.textMobile} color="dimmed" mt="md">
-								Приложение автоматически сохраняет и структурирует только важное из
-								книг, статей, курсов. Визуализирует ваши знания в виде майндмэпа и
-								упрощает поиск нужной информации.
+								{t('heroDescription1')}
 							</Text>
 							<List
 								mt={30}
@@ -63,41 +55,35 @@ export const HeroContent = () => {
 								}
 							>
 								<List.Item className={classes.listItemHiddenMobile}>
-									<b>Конспект</b>{' '}
-									<span>
-										– автоматическая обработка исходного материала, вычленение только
-										важной информации.
-									</span>
+									<b>{t('heroListItem1Title')}</b> <span> – {t('heroListItem1')}</span>
 								</List.Item>
 								<List.Item className={classes.listItemHiddenMobile}>
-									<b>Визуализация</b>
-									<span>
-										– автоматическая систематизация информации в виде майндмэпа.
-									</span>
+									<b>{t('heroListItem2Title')}</b>
+									<span> – {t('heroListItem2')}</span>
 								</List.Item>
 								<List.Item className={classes.listItemHiddenMobile}>
-									<b>Простая навигация</b>
-									<span>– легкость поиска необходимой информации.</span>
+									<b>{t('heroListItem3Title')}</b>
+									<span> – {t('heroListItem3')}</span>
 								</List.Item>
 							</List>
 
 							<Group className={classes.controlGroup} mt={30}>
-									<a
-										role="button"
-										aria-label="перейти в телеграм"
-										href="https://t.me/EdBase_bot"
-										target="_blank"
-										rel="noopener noreferrer"
+								<a
+									role="button"
+									aria-label="перейти в телеграм"
+									href="https://t.me/EdBase_bot"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<Button
+										variant="default"
+										radius="xl"
+										size="md"
+										className={classes.controlLeft}
 									>
-										<Button
-											variant="default"
-											radius="xl"
-											size="md"
-											className={classes.controlLeft}
-										>
-											Пробовать
-										</Button>
-									</a>
+										{t('heroButtonLeft')}
+									</Button>
+								</a>
 								<Button
 									aria-label="открыть видео с демонстрацией работы приложения Ed-Base"
 									onClick={openModal}
@@ -106,7 +92,7 @@ export const HeroContent = () => {
 									size="md"
 									className={classes.controlRight}
 								>
-									Как это работает?
+									{t('heroButtonRight')}
 								</Button>
 							</Group>
 						</div>

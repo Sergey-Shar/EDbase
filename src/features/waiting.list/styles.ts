@@ -5,21 +5,20 @@ export const useStyles = createStyles((theme) => ({
 		paddingTop: `calc(${theme.spacing.xl} * 2)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
 		minHeight: 300,
-		backgroundImage:
-		'url(src/assets/images/arrow.png)',
+		backgroundImage: 'url(./src/assets/images/arrow.png)',
 		backgroundSize: 'contain',
+		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'center',
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
 		[theme.fn.smallerThan('md')]: {
 			backgroundColor:
-				theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-				backgroundImage:'none'
+				theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0]
 		}
 	},
 
 	title: {
-		marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
+		marginBottom: `calc(${theme.spacing.xl} * 1.5)`
 	},
 	description: {
 		textAlign: 'center',

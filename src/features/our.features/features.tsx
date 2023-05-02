@@ -1,15 +1,14 @@
 import { Text, Card, rem } from '@mantine/core'
 import React from 'react'
 import { useStyles } from './styles'
-
-export interface FeatureProps {
+interface FeatureProps {
 	icon: React.FC<any>
-	title: React.ReactNode
-	description: React.ReactNode
+	title: string
+	description: string
 }
 
 export const Feature = ({ icon: Icon, title, description }: FeatureProps) => {
-	const { classes, theme } = useStyles()
+	const { classes } = useStyles()
 	return (
 		<Card shadow="md" radius="md" className={classes.card} padding="xl">
 			<Icon
