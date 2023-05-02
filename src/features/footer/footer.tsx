@@ -4,6 +4,7 @@ import {
 	IconBrandTelegram,
 	IconBrandLinkedin
 } from '@tabler/icons-react'
+import { socialMedia } from 'src/shared/utils/social.media.url'
 import { useStyles } from './styles'
 
 export const AppFooter = () => {
@@ -11,18 +12,17 @@ export const AppFooter = () => {
 	return (
 		<footer className={classes.footer}>
 			<Container size="xl" className={classes.inner}>
-				<div className={classes.logo}>
-				</div>
+				<div className={classes.logo}></div>
 			</Container>
 			<Container className={classes.afterFooter}>
 				<Text className={classes.text} color="dimmed" size="sm">
-					Copyright © 2023 Ed-Base All rights reserved.
+					Copyright © 2023 Simplase All rights reserved.
 				</Text>
 
 				<Group spacing={0} className={classes.social} position="right" noWrap>
 					<a
 						aria-label="перейти в LinkedIn"
-						href="https://www.linkedin.com/company/92815291/admin/?feedType=following"
+						href={socialMedia.linkedIn}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -32,7 +32,7 @@ export const AppFooter = () => {
 					</a>
 					<a
 						aria-label="перейти в телеграм канал"
-						href="https://t.me/SimplaseBot"
+						href={socialMedia.telegram}
 						rel="noopener noreferrer"
 						target="_blank"
 					>
@@ -42,7 +42,7 @@ export const AppFooter = () => {
 					</a>
 					<a
 						aria-label="перейти в Instagram"
-						href="https://www.instagram.com/simplase/?igshid=YmMyMTA2M2Y%3D"
+						href={socialMedia.instagram}
 						target="_blank"
 						rel="noopener noreferrer"
 					>

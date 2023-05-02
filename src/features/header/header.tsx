@@ -15,7 +15,8 @@ import {
 	rem,
 	Container
 } from '@mantine/core'
-import logo from '../../assets/images/logo2.png'
+import logoDark from '../../assets/images/logoDark.png'
+import logoLight from '../../assets/images/logoLight.png'
 import { useDisclosure } from '@mantine/hooks'
 import { IconChevronDown } from '@tabler/icons-react'
 import { useStyles } from './styles'
@@ -54,16 +55,16 @@ export const AppHeader = () => {
 			<Header className={classes.header} height={60}>
 				<Container size="xl">
 					<Group position="apart" sx={{ height: rem(60) }}>
-						<ButtonToggleTheme className={classes.toggleThemeMobile}/>
+						<ButtonToggleTheme className={classes.toggleThemeMobile} />
 						<a href="#header">
 							<img
-								src={logo}
+								src={theme.colorScheme === 'dark' ? logoDark : logoLight}
 								className={classes.logo}
-								alt="Логотип стартапа Ed-base"
+								alt="Логотип стартапа Simplase"
 							/>
 						</a>
 						<Group
-							aria-label="Главная навигация по приложению Ed-base"
+							aria-label="Главная навигация по приложению Simplase"
 							sx={{ height: '100%' }}
 							spacing={0}
 							className={classes.hiddenMobile}

@@ -3,10 +3,10 @@ import {
 	Title,
 	Button,
 	Container,
-	Tooltip,
 } from '@mantine/core'
 import { useStyles } from './styles'
 import { useTranslation } from 'src/context/language/translation.context'
+import {socialMedia } from 'src/shared/utils/social.media.url'
 export const WaitingList = () => {
 	const { classes } = useStyles()
 		const { t } = useTranslation()
@@ -23,11 +23,7 @@ export const WaitingList = () => {
 					{t('waitingListTitle')}
 				</Title>
 				<Group position="center" mt="xl">
-					<a
-						href="https://t.me/EdBase_bot"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<a href={socialMedia.telegramBot} target="_blank" rel="noopener noreferrer">
 						<Button className={classes.button} type="button" radius="xl" size="md">
 							{t('heroButtonLeft')}
 						</Button>

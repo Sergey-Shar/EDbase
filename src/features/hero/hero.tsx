@@ -16,6 +16,7 @@ import { useStyles } from './styles'
 import { useDisclosure } from '@mantine/hooks'
 import { VideoModal } from './video.modal'
 import { useTranslation } from 'src/context/language/translation.context'
+import { socialMedia } from 'src/shared/utils/social.media.url'
 
 export const HeroContent = () => {
 	const { classes } = useStyles()
@@ -71,7 +72,7 @@ export const HeroContent = () => {
 								<a
 									role="button"
 									aria-label="перейти в телеграм"
-									href="https://t.me/EdBase_bot"
+									href={socialMedia.telegramBot}
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -85,7 +86,7 @@ export const HeroContent = () => {
 									</Button>
 								</a>
 								<Button
-									aria-label="открыть видео с демонстрацией работы приложения Ed-Base"
+									aria-label="открыть видео с демонстрацией работы приложения Simplase"
 									onClick={openModal}
 									variant="default"
 									radius="xl"
