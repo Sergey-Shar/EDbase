@@ -17,7 +17,7 @@ export const VideoPlayer = () => {
 			<source
 				aria-describedby="В этом видео ролике 
 			показан работающий прототип 
-			приложения Ed-base"
+			приложения Simplase"
 				src={video}
 			/>
 			<BigPlayButton aria-label="включить видео" position="center" />

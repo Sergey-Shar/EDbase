@@ -14,8 +14,8 @@ export const useStyles = createStyles((theme) => ({
 		position: 'fixed'
 	},
 	logo: {
-		width: '2.5rem',
-		height: '2.5rem'
+		width: '2.3rem',
+		height: '2.3rem'
 	},
 	link: {
 		display: 'flex',
