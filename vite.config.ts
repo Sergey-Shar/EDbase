@@ -7,8 +7,8 @@ const manifestPlugin: Partial<VitePWAOptions> = {
 	registerType: 'prompt',
 	includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.png'],
 	manifest: {
-		name: 'Ed base',
-		short_name: 'EdBase',
+		name: 'Simplase',
+		short_name: 'Simplase',
 		lang: 'ru',
 		icons: [
 			{
