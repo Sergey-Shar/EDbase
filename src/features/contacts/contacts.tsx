@@ -13,7 +13,7 @@ import { useForm } from '@mantine/form'
 import { useStyles } from './styles'
 import { IconAt, IconUser } from '@tabler/icons-react'
 import { randomId } from '@mantine/hooks'
-import { showNotification } from 'src/shared/utils/showNotification'
+import { showNotification } from 'src/shared/utils/show.notification'
 import api from 'src/app/services/api'
 import { useState } from 'react'
 import { errorHandler } from 'src/shared/utils/handle.errors'
@@ -39,7 +39,7 @@ export const Contacts = () => {
 	})
 
 	const { classes } = useStyles()
- const { t } = useTranslation() 
+	const { t } = useTranslation()
 
 	const handleSubmit = formMessage.onSubmit(async (userData) => {
 		setLoading(true)

@@ -20,10 +20,10 @@ import logoLight from '../../assets/images/logoLight.png'
 import { useDisclosure } from '@mantine/hooks'
 import { IconChevronDown } from '@tabler/icons-react'
 import { useStyles } from './styles'
-import { featureMenu } from './feature.data'
 import { ButtonToggleTheme } from './toggle.theme'
 import { useTranslation } from 'src/context/language/translation.context'
 import { LanguageMenu } from './change.language'
+import { featureList } from 'src/shared/utils/feature.list'
 
 export const AppHeader = () => {
 	const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
@@ -32,18 +32,18 @@ export const AppHeader = () => {
 
 	const { t } = useTranslation()
 
-	const links = featureMenu.map((item) => (
-		<UnstyledButton className={classes.subLink} key={item.title}>
+	const links = featureList.map((item) => (
+		<UnstyledButton className={classes.subLink} key={item.id}>
 			<Group noWrap align="flex-start">
 				<ThemeIcon size={34} variant="default" radius="md">
 					<item.icon size={rem(22)} color={'gray'} />
 				</ThemeIcon>
 				<div>
 					<Text size="sm" fw={500}>
-						{item.title}
+						{t(`featureTitle${item.id}`)}
 					</Text>
 					<Text size="xs" color="dimmed">
-						{item.description}
+						{t(`featureDescription${item.id}`)}
 					</Text>
 				</div>
 			</Group>

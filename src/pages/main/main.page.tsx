@@ -1,12 +1,15 @@
-import { AppHeader, HeroContent } from 'src/features'
-import { FeaturesGrid } from 'src/features/our.features'
-import { AppFooter } from 'src/features/footer'
-import { Questions } from 'src/features/questions'
-import { Contacts } from 'src/features/contacts'
-import { About } from 'src/features/about'
-import { ScrollTopBtn } from 'src/features/scroll.top.dtn'
-import { VideoSection } from 'src/features/video'
-import { WaitingList } from 'src/features/waiting.list'
+import {
+	About,
+	AppFooter,
+	AppHeader,
+	Contacts,
+	FeaturesGrid,
+	HeroContent,
+	Questions,
+	ScrollTopBtn,
+	VideoSection,
+	WaitingList
+} from 'src/features'
 
 export const MainPage = () => {
 	return (
@@ -20,7 +23,7 @@ export const MainPage = () => {
 			<Questions />
 			<About />
 			<Contacts />
-			<AppFooter  />
+			<AppFooter />
 		</>
 	)
 }
