@@ -1,8 +1,9 @@
 import { Text, Card, rem } from '@mantine/core'
 import React from 'react'
 import { useStyles } from './styles'
+import { TablerIconsProps } from '@tabler/icons-react'
 interface FeatureProps {
-	icon: React.FC<any>
+	icon: (props: TablerIconsProps) => JSX.Element
 	title: string
 	description: string
 }

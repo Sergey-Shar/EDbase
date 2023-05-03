@@ -4,7 +4,7 @@ import {
 	TNicknameSubmitValues
 } from './models/nickname.models'
 import { TMessageResponse, TSendMessageValues } from './models/message.models'
-import { showNotification } from 'src/shared/utils/showNotification'
+import { showNotification } from 'src/shared/utils/show.notification'
 
 const URL =
 	'https://edbase-3a55f-default-rtdb.europe-west1.firebasedatabase.app/'

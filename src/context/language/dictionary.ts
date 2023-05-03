@@ -7,7 +7,7 @@ export const dictionary: LanguageTranslation = {
 		questions: 'Questions',
 		waiting: 'Try it',
 		menu: 'Menu',
-		heroTitle: 'Save and organize your data in one place.',
+		heroTitle: 'We will preserve and systematize all of your knowledge.',
 		heroDescription1: `The app will automatically save and 
 		structure materials of any format, 
 		creating your personal database. 
@@ -60,10 +60,10 @@ export const dictionary: LanguageTranslation = {
 		answer6: `You can share individual materials or your entire database by sending a link to other users of the application. You can also create public access to your database through the application settings.`,
 		OurTeam: 'Our Team',
 		OurTeamDescription1:
-			'The Simples team consists of 11 enthusiasts united by one idea. ',
-		OurTeamDescription2: `During our research, we noticed that many people who are learning or engaged in self-improvement struggle with managing their saved materials. This inspired us to develop the Simples product. `,
+			'The Simplase team consists of 11 enthusiasts united by one idea. ',
+		OurTeamDescription2: `During our research, we noticed that many people who are learning or engaged in self-improvement struggle with managing their saved materials. This inspired us to develop the Simplase product. `,
 		OurTeamDescription3: `Our proposed solution was awarded first place in a startup competition. Currently, we continue to work on developing the application. `,
-		OurTeamDescription4: `Simples will help users simplify the process of saving and organizing information obtained from various sources and in different formats.`,
+		OurTeamDescription4: `Simplase will help users simplify the process of saving and organizing information obtained from various sources and in different formats.`,
 		OurTeamDescription5: ' ',
 		OurTeamDescription6: ' ',
 		contactsTitle: 'Connect with us',
@@ -81,7 +81,7 @@ export const dictionary: LanguageTranslation = {
 		questions: 'Вопросы',
 		waiting: 'Пробовать',
 		menu: 'Меню',
-		heroTitle: `Сохраняй, систематизируй  свои знания в одном месте.`,
+		heroTitle: `Сохраним и систематизируем все твои знания.`,
 		heroDescription1: `Приложение в автоматическом режиме сохранит и структурирует материал любого формата,
 		 создавая вашу персональную базу знаний.`,
 		heroDescription2: `Визуальное представление в виде майндмэпа позволит вам быстро

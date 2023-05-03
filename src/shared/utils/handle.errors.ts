@@ -1,5 +1,5 @@
 import { AxiosError, isAxiosError } from 'axios'
-import { showNotification } from './showNotification'
+import { showNotification } from './show.notification'
 
 export const errorHandler = (error: AxiosError | Error) => {
 	if (isAxiosError(error)) {
